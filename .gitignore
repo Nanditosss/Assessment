@@ -1,0 +1,23 @@
+# Logs
+*.log
+
+# Node modules
+node_modules/
+
+# Environment variables
+.env
+.env.local
+
+# Wrangler
+.wrangler/
+wrangler.toml.bak
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor directories
+.vscode/
+.idea/
+*.swp
+*.swo
