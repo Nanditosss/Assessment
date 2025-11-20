@@ -296,6 +296,7 @@ async function guardarYContinuar(event) {
     console.log('✅ GUARDAR Y CONTINUAR: Sección actual =', currentSection);
     console.log('✅ GUARDAR Y CONTINUAR: Tipo de currentSection =', typeof currentSection);
     console.log('✅ GUARDAR Y CONTINUAR: URL actual =', window.location.href);
+    console.log('✅ GUARDAR Y CONTINUAR: Pathname =', window.location.pathname);
     
     if (currentSection < 6) {
         const nextSection = currentSection + 1;
@@ -306,9 +307,10 @@ async function guardarYContinuar(event) {
         
         setTimeout(() => {
             console.log(`🚀🚀🚀 EJECUTANDO NAVEGACIÓN: → ${nextUrl} 🚀🚀🚀`);
-            console.log(`🚀 Método: window.location.replace (evita historial)`);
-            // Usar replace para evitar problemas con historial del navegador
-            window.location.replace(nextUrl);
+            console.log(`🚀 Antes de navegar - currentSection: ${currentSection}, nextSection: ${nextSection}`);
+            console.log(`🚀 Método: window.location.href (asignación directa)`);
+            // Usar asignación directa de href en lugar de replace
+            window.location.href = nextUrl;
         }, 1000);
     } else {
         // En la última sección, ir a confirmación
