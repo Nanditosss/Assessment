@@ -1,13 +1,30 @@
 // Cloudflare Pages Function para manejar respuestas del assessment
 
+type EventContext<Env, P extends string, Data> = {
+  request: Request;
+  env: Env;
+  params: Record<P, string>;
+  data: Data;
+  waitUntil(promise: Promise<any>): void;
+  passThroughOnException(): void;
+};
+
 interface Env {
   DB: D1Database;
 }
 
 // POST: Crear nueva respuesta
-export async function onRequestPost(context: { request: Request; env: Env }) {
+export async function onRequestPost(context: EventContext<Env, any, any>) {
   try {
-    const { DB } = context.env;
+    const DB = context.env.DB;
+    
+    if (!DB) {
+      console.error('D1 Database binding not found');
+      return new Response(
+        JSON.stringify({ error: 'Database not configured', details: 'D1 binding is missing' }),
+        { status: 500, headers: { 'Content-Type': 'application/json' } }
+      );
+    }
     const data = await context.request.json() as any;
 
     // Validar campos requeridos
@@ -51,9 +68,18 @@ export async function onRequestPost(context: { request: Request; env: Env }) {
 }
 
 // GET: Listar respuestas
-export async function onRequestGet(context: { request: Request; env: Env }) {
+export async function onRequestGet(context: EventContext<Env, any, any>) {
   try {
-    const { DB } = context.env;
+    const DB = context.env.DB;
+    
+    if (!DB) {
+      console.error('D1 Database binding not found');
+      return new Response(
+        JSON.stringify({ error: 'Database not configured', details: 'D1 binding is missing' }),
+        { status: 500, headers: { 'Content-Type': 'application/json' } }
+      );
+    }
+    
     const url = new URL(context.request.url);
     const email = url.searchParams.get('email');
     const isAdmin = url.searchParams.get('admin') === 'true';
