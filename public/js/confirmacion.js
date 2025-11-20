@@ -157,7 +157,7 @@ async function enviarFormulario() {
             completado: true
         };
         
-        const response = await fetch('tables/respuestas_sharepoint', {
+        const response = await fetch('/api/tables/respuestas_sharepoint', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

@@ -140,7 +140,19 @@ let modalActual = null;
 // Cargar respuestas desde la API
 async function cargarRespuestas() {
     try {
-        const response = await fetch('tables/respuestas_sharepoint?limit=100');
+        // Construir URL con parámetros según el tipo de usuario
+        let url = '/api/tables/respuestas_sharepoint?';
+        
+        if (typeof isAdmin === 'function' && isAdmin()) {
+            url += 'admin=true';
+        } else if (typeof getCurrentUserEmail === 'function') {
+            const email = getCurrentUserEmail();
+            if (email) {
+                url += `email=${encodeURIComponent(email)}`;
+            }
+        }
+        
+        const response = await fetch(url);
         
         if (!response.ok) {
             throw new Error('Error al cargar respuestas');
@@ -149,8 +161,8 @@ async function cargarRespuestas() {
         const result = await response.json();
         let allResponses = result.data || [];
         
-        // Filtrar respuestas según el usuario
-        respuestasGlobal = filterResponsesByUser(allResponses);
+        // Ya vienen filtradas desde el backend, no necesitamos filtrar aquí
+        respuestasGlobal = allResponses;
         
         mostrarRespuestas(respuestasGlobal);
         
@@ -340,7 +352,7 @@ async function eliminarRespuesta(id) {
     }
     
     try {
-        const response = await fetch(`tables/respuestas_sharepoint/${id}`, {
+        const response = await fetch(`/api/tables/respuestas_sharepoint/${id}`, {
             method: 'DELETE'
         });
         
