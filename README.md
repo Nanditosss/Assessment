@@ -1,5 +1,12 @@
 # Assessment Microsoft 365
 
+## 🌐 URLs de Producción
+
+- **Cloudflare Pages:** https://assessment-m365-v2.pages.dev
+- **URL del despliegue:** https://35255b5d.assessment-m365-v2.pages.dev
+- **GitHub:** https://github.com/Nanditosss/Assessment
+- **Sandbox:** https://3000-ium0dwz6mty78z96fpv3x-82b888ba.sandbox.novita.ai
+
 ## 📋 Descripción del Proyecto
 
 Aplicación web interactiva diseñada para evaluar de forma integral el entorno Microsoft 365 de una organización. El assessment está dividido en **6 secciones independientes** con 63 preguntas que cubren todos los aspectos fundamentales de la plataforma, desde inventario y usuarios hasta gobernanza moderna, IA y automatización.
