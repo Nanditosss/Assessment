@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Flujo Completo - Assessment Microsoft 365</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .test-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        button {
+            background: #00A89C;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px 5px;
+        }
+        button:hover {
+            background: #008577;
+        }
+        .log {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+            max-height: 400px;
+            overflow-y: auto;
+            font-family: monospace;
+            font-size: 12px;
+        }
+        .log div {
+            margin: 5px 0;
+            padding: 5px;
+        }
+        .success { color: #28a745; }
+        .error { color: #dc3545; }
+        .info { color: #007bff; }
+    </style>
+</head>
+<body>
+    <div class="test-card">
+        <h1>🧪 Test Flujo Completo del Assessment</h1>
+        <p>Este script simula completar todas las secciones y enviar el formulario.</p>
+        
+        <button onclick="llenarTodasSecciones()">1. Llenar Todas las Secciones</button>
+        <button onclick="verificarDatos()">2. Verificar Datos</button>
+        <button onclick="enviarFormulario()">3. Enviar Formulario</button>
+        <button onclick="limpiarTodo()">Limpiar Todo</button>
+        
+        <div class="log" id="log"></div>
+    </div>
+
+    <script>
+        function log(message, type = 'info') {
+            const logDiv = document.getElementById('log');
+            const entry = document.createElement('div');
+            entry.className = type;
+            entry.textContent = `[${new Date().toLocaleTimeString()}] ${message}`;
+            logDiv.appendChild(entry);
+            logDiv.scrollTop = logDiv.scrollHeight;
+            console.log(message);
+        }
+
+        function generateUUID() {
+            return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+                const r = Math.random() * 16 | 0;
+                const v = c === 'x' ? r : (r & 0x3 | 0x8);
+                return v.toString(16);
+            });
+        }
+
+        function llenarTodasSecciones() {
+            log('Iniciando llenado de todas las secciones...', 'info');
+            
+            // Sección 1: Información de contacto + Inventario
+            const seccion1 = {
+                empresa: 'UNIKAL TECH PARTNERS',
+                contacto: 'Fernando González',
+                email: 'fernando@unikal.tech',
+                inv_1: 'Aproximadamente 500GB de datos distribuidos en servidores locales y unidades de red.',
+                inv_2: 'Principalmente documentos de Office (Word, Excel, PowerPoint), PDFs, imágenes y algunos archivos CAD.',
+                inv_3: 'Estructura departamental: Administración, Ventas, Operaciones, RRHH. Cada departamento tiene sus carpetas principales.',
+                inv_4: 'Sí, estimamos un 20% de contenido obsoleto o duplicado que debe limpiarse antes de migrar.',
+                inv_5: 'No tenemos metadatos estructurados. Los archivos se organizan solo por carpetas y nombres.'
+            };
+            localStorage.setItem('borrador_seccion1', JSON.stringify(seccion1));
+            localStorage.setItem('borrador_seccion1_fecha', new Date().toISOString());
+            log('✓ Sección 1 completada', 'success');
+
+            // Sección 2: Usuarios y Requisitos
+            const seccion2 = {
+                usu_1: 'Equipo directivo (10), Administrativos (25), Comerciales (30), Técnicos (35)',
+                usu_2: 'Principalmente por email con adjuntos. Algunas carpetas compartidas en red local.',
+                usu_3: 'Nivel medio-bajo. La mayoría usa Office 365 solo para email.',
+                usu_4: 'Sí, colaboramos con consultores externos y clientes ocasionalmente.',
+                usu_5: 'Tenemos identificados 2-3 personas por departamento que podrían ser campeones.',
+                req_1: 'Algunas aplicaciones legacy que acceden a carpetas compartidas vía UNC path.',
+                req_2: 'Estructura actual: Administrador global (IT), Propietarios por departamento, usuarios estándar.',
+                req_3: 'Scripts VBA en Excel que leen/escriben archivos en carpetas compartidas.',
+                req_4: 'Windows 10/11 en equipos de escritorio. Algunos usuarios con MacOS. Acceso móvil básico.',
+                req_5: 'Sí, es importante mantener versiones anteriores de contratos y documentos financieros.'
+            };
+            localStorage.setItem('borrador_seccion2', JSON.stringify(seccion2));
+            localStorage.setItem('borrador_seccion2_fecha', new Date().toISOString());
+            log('✓ Sección 2 completada', 'success');
+
+            // Sección 3: Gobernanza y Adopción
+            const seccion3 = {
+                gob_1: 'No tenemos un modelo formal documentado. Cada jefe de departamento gestiona su área de forma independiente.',
+                gob_2: 'IT será administrador global. Cada gerente de departamento será propietario de su sitio.',
+                gob_3: 'Preferimos estructura por departamento en primer nivel, con subsitios por proyectos.',
+                gob_4: 'Documentos legales 10 años, financieros 7 años, operativos 3 años. Borradores 6 meses.',
+                gob_5: 'Solo gerentes podrán solicitar nuevos sitios mediante formulario de aprobación.',
+                ado_1: 'Sesiones de formación de 2 horas por departamento, videos tutoriales y canal de Teams para soporte.',
+                ado_2: 'Usuarios activos mensuales, documentos en coautoría, reducción de emails con adjuntos.',
+                ado_3: 'Ventas para colaborar en propuestas, Marketing para centralizar materiales de campaña.',
+                ado_4: 'Mesa de ayuda interna vía Teams 9-18h. 3 superusuarios por cada 50 empleados.',
+                ado_5: 'Encuestas mensuales vía Forms, reuniones trimestrales con superusuarios.'
+            };
+            localStorage.setItem('borrador_seccion3', JSON.stringify(seccion3));
+            localStorage.setItem('borrador_seccion3_fecha', new Date().toISOString());
+            log('✓ Sección 3 completada', 'success');
+
+            // Sección 4: IA y Automatización
+            const seccion4 = {
+                ia_1: 'Clasificación automática de documentos, extracción de datos de facturas.',
+                ia_2: 'Sí, para identificar información clave en contratos y documentos legales.',
+                ia_3: 'Queremos mejorar la búsqueda para que encuentre información relevante rápidamente.',
+                ia_4: 'Evaluando Copilot para que ayude en resúmenes de documentos y redacción.',
+                ia_5: 'Etiquetado automático de documentos por tipo, cliente y proyecto.',
+                pow_1: 'Aprobaciones de vacaciones, solicitudes de compra, onboarding de empleados.',
+                pow_2: 'Formularios de solicitud de soporte, tracking de incidencias.',
+                pow_3: 'Dashboard de ventas, reportes de RRHH, métricas de operaciones.',
+                pow_4: 'Macros de Excel para consolidar datos, scripts de importación/exportación.',
+                pow_5: 'Integración con CRM, conexión con sistema de facturación.'
+            };
+            localStorage.setItem('borrador_seccion4', JSON.stringify(seccion4));
+            localStorage.setItem('borrador_seccion4_fecha', new Date().toISOString());
+            log('✓ Sección 4 completada', 'success');
+
+            // Sección 5: Cultura y Seguridad
+            const seccion5 = {
+                cul_1: 'Moderada. Hay resistencia en usuarios senior, pero disposición en equipos jóvenes.',
+                cul_2: 'Implementaciones previas fueron complicadas por falta de formación adecuada.',
+                cul_3: 'Equipo de proyecto con representantes de cada departamento más consultor externo.',
+                cul_4: 'Dirección está comprometida y comunicará beneficios en kickoff y seguimientos.',
+                cul_5: 'Encuestas anónimas trimestrales y buzón de sugerencias permanente.',
+                seg_1: 'MFA activado, políticas de contraseñas, actualización automática de dispositivos.',
+                seg_2: 'Datos financieros, información de clientes, contratos confidenciales.',
+                seg_3: 'Queremos implementar DLP para evitar compartir información sensible externamente.',
+                seg_4: 'Documentos legales 10 años, financieros 7 años según normativa española.',
+                seg_5: 'Monitoreo básico de accesos. Queremos alertas en tiempo real de actividades sospechosas.'
+            };
+            localStorage.setItem('borrador_seccion5', JSON.stringify(seccion5));
+            localStorage.setItem('borrador_seccion5_fecha', new Date().toISOString());
+            log('✓ Sección 5 completada', 'success');
+
+            // Sección 6: Integraciones y Experiencia
+            const seccion6 = {
+                int_1: 'CRM (Salesforce), ERP (SAP), Sistema de facturación (Sage).',
+                int_2: 'Sincronización de contactos con CRM, documentos de ventas vinculados a oportunidades.',
+                int_3: 'Actualmente por exportación/importación manual de archivos CSV.',
+                int_4: 'Automatizar flujo de documentos de ventas desde CRM a SharePoint.',
+                int_5: 'Power BI conectado a SharePoint para dashboards en tiempo real.',
+                exp_1: 'Principalmente desde escritorio. 30% de usuarios necesita acceso móvil regular.',
+                exp_2: 'Uso extensivo de Teams. Queremos integrar todo el contenido desde Teams.',
+                exp_3: 'No hay requisitos especiales de accesibilidad actualmente.',
+                exp_4: 'Búsqueda actual es muy lenta. Queremos filtros inteligentes y sugerencias.',
+                exp_5: 'Colaboración con consultores externos en proyectos específicos.',
+                gom_1: 'No estamos usando Purview actualmente. Queremos evaluarlo.',
+                gom_2: 'Esquema básico: Público, Interno, Confidencial, Restringido.',
+                gom_3: 'Nomenclatura estándar: YYYY-MM-DD_TipoDoc_Cliente_Proyecto_v1.',
+                gom_4: 'Cumplimiento RGPD principalmente. Sector industrial sin regulaciones especiales.',
+                gom_5: 'Gerente de cada departamento + coordinador de IT.'
+            };
+            localStorage.setItem('borrador_seccion6', JSON.stringify(seccion6));
+            localStorage.setItem('borrador_seccion6_fecha', new Date().toISOString());
+            log('✓ Sección 6 completada', 'success');
+
+            log('========================================', 'info');
+            log('✅ TODAS LAS SECCIONES COMPLETADAS', 'success');
+            log('Total de respuestas guardadas: 63 preguntas', 'success');
+            log('========================================', 'info');
+        }
+
+        function verificarDatos() {
+            log('Verificando datos guardados...', 'info');
+            let totalCampos = 0;
+            
+            for (let i = 1; i <= 6; i++) {
+                const borrador = localStorage.getItem(`borrador_seccion${i}`);
+                if (borrador) {
+                    const respuestas = JSON.parse(borrador);
+                    const campos = Object.keys(respuestas).length;
+                    totalCampos += campos;
+                    log(`✓ Sección ${i}: ${campos} campos guardados`, 'success');
+                } else {
+                    log(`✗ Sección ${i}: Sin datos`, 'error');
+                }
+            }
+            
+            log(`Total de campos guardados: ${totalCampos}`, 'info');
+            
+            // Verificar datos de contacto
+            const seccion1 = localStorage.getItem('borrador_seccion1');
+            if (seccion1) {
+                const data = JSON.parse(seccion1);
+                log(`Empresa: ${data.empresa}`, 'info');
+                log(`Contacto: ${data.contacto}`, 'info');
+                log(`Email: ${data.email}`, 'info');
+            }
+        }
+
+        async function enviarFormulario() {
+            log('========================================', 'info');
+            log('Iniciando envío del formulario...', 'info');
+            
+            // Consolidar todas las secciones
+            let todasRespuestas = {};
+            for (let i = 1; i <= 6; i++) {
+                const borrador = localStorage.getItem(`borrador_seccion${i}`);
+                if (borrador) {
+                    Object.assign(todasRespuestas, JSON.parse(borrador));
+                }
+            }
+            
+            log(`Total campos consolidados: ${Object.keys(todasRespuestas).length}`, 'info');
+            
+            // Preparar datos para envío
+            const data = {
+                id: generateUUID(),
+                fecha_envio: new Date().toISOString(),
+                empresa: todasRespuestas.empresa,
+                contacto: todasRespuestas.contacto,
+                email: todasRespuestas.email,
+                respuestas: JSON.stringify(todasRespuestas),
+                completado: true
+            };
+            
+            log(`ID generado: ${data.id}`, 'info');
+            log(`Enviando a: /api/tables/respuestas_sharepoint`, 'info');
+            
+            try {
+                const response = await fetch('/api/tables/respuestas_sharepoint', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+                
+                log(`Response status: ${response.status}`, response.ok ? 'success' : 'error');
+                
+                const result = await response.json();
+                log(`Response: ${JSON.stringify(result)}`, response.ok ? 'success' : 'error');
+                
+                if (response.ok) {
+                    log('========================================', 'info');
+                    log('✅ ¡FORMULARIO ENVIADO EXITOSAMENTE!', 'success');
+                    log('========================================', 'info');
+                    log(`La respuesta fue guardada en la base de datos D1`, 'success');
+                    log(`ID: ${result.id}`, 'info');
+                } else {
+                    log('❌ Error al enviar el formulario', 'error');
+                }
+            } catch (error) {
+                log(`❌ Error de red: ${error.message}`, 'error');
+                console.error(error);
+            }
+        }
+
+        function limpiarTodo() {
+            for (let i = 1; i <= 6; i++) {
+                localStorage.removeItem(`borrador_seccion${i}`);
+                localStorage.removeItem(`borrador_seccion${i}_fecha`);
+            }
+            log('🗑️ Todos los datos locales eliminados', 'info');
+            document.getElementById('log').innerHTML = '';
+        }
+
+        // Log inicial
+        log('✅ Test inicializado correctamente', 'success');
+        log('Presiona los botones en orden para probar el flujo completo', 'info');
+    </script>
+</body>
+</html>
