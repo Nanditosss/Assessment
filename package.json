@@ -5,18 +5,34 @@
   "main": "server.js",
   "type": "module",
   "scripts": {
-    "dev": "node server.js",
+    "build": "rm -rf dist && mkdir -p dist && cp -r public/* dist/ && cp -r functions dist/",
+    "preview": "wrangler pages dev dist --d1=DB:assessment-db --local",
+    "deploy": "npm run build && wrangler pages deploy dist --project-name assessment-microsoft-unikaltech",
+    "db:migrate:local": "wrangler d1 migrations apply assessment-db --local",
+    "db:migrate:prod": "wrangler d1 migrations apply assessment-db --remote",
+    "db:console:local": "wrangler d1 execute assessment-db --local",
+    "db:console:prod": "wrangler d1 execute assessment-db --remote",
     "start": "pm2 start ecosystem.config.cjs",
     "stop": "pm2 stop assessment-m365",
     "restart": "pm2 restart assessment-m365",
     "logs": "pm2 logs assessment-m365 --nostream",
     "test": "curl http://localhost:3000"
   },
-  "keywords": ["assessment", "microsoft365", "sharepoint"],
+  "keywords": [
+    "assessment",
+    "microsoft365",
+    "sharepoint"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@hono/node-server": "^1.19.6",
     "hono": "^4.10.6"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20251120.0",
+    "@hono/vite-cloudflare-pages": "^0.4.3",
+    "vite": "^7.2.4",
+    "wrangler": "^4.49.1"
   }
 }

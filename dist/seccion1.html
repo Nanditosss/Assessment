@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sección 1: Inicio e Inventario - Assessment Microsoft 365</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <a href="https://unikal.tech" target="_blank" class="header-logo" title="UNIKAL.TECH">
+                <img src="images/unikal-tech-logo.png" alt="UNIKAL.TECH">
+            </a>
+            <div class="header-content">
+                <i class="fas fa-database"></i>
+                <h1>Sección 1: Inicio e Inventario</h1>
+                <p class="subtitle">Información de Contacto y Evaluación de Datos</p>
+            </div>
+        </header>
+
+        <div class="navigation-steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-label">Inicio</div>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-label">Usuarios</div>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-label">Gobernanza</div>
+            </div>
+            <div class="step">
+                <div class="step-number">4</div>
+                <div class="step-label">IA</div>
+            </div>
+            <div class="step">
+                <div class="step-number">5</div>
+                <div class="step-label">Seguridad</div>
+            </div>
+            <div class="step">
+                <div class="step-number">6</div>
+                <div class="step-label">Final</div>
+            </div>
+        </div>
+
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+        </div>
+        <div class="progress-text" id="progressText">0% completado</div>
+
+        <form>
+            <!-- Información de Contacto -->
+            <div class="section">
+                <h2 class="section-title">
+                    <i class="fas fa-user"></i>
+                    Información de Contacto
+                </h2>
+                <div class="section-description">
+                    Por favor, complete sus datos de contacto. Esta información es obligatoria para identificar su cuestionario.
+                </div>
+
+                <div class="form-group">
+                    <label for="empresa">Nombre de la Empresa *</label>
+                    <input type="text" id="empresa" name="empresa" required placeholder="Ej: Acme Corporation">
+                </div>
+
+                <div class="form-group">
+                    <label for="contacto">Nombre del Contacto *</label>
+                    <input type="text" id="contacto" name="contacto" required placeholder="Ej: Juan Pérez">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email de Contacto *</label>
+                    <input type="email" id="email" name="email" required placeholder="Ej: juan.perez@empresa.com">
+                </div>
+            </div>
+
+            <!-- Inventario -->
+            <div class="section">
+                <h2 class="section-title">
+                    <i class="fas fa-boxes"></i>
+                    Inventario de Datos
+                </h2>
+                <div class="section-description">
+                    Esta sección nos ayudará a dimensionar el alcance de la migración y planificar la estructura en SharePoint Online.
+                </div>
+
+                <div class="question-card">
+                    <label class="question-label">
+                        ¿Qué volumen y tipo de datos existen actualmente en el servidor de archivos (número de documentos, tamaño total, tipos de archivos)?
+                        <span class="purpose">
+                            Para dimensionar el alcance de la migración y planificar la estructura en SharePoint.
+                        </span>
+                    </label>
+                    <textarea name="inv_1" rows="4" placeholder="Ej: Tenemos aproximadamente 500,000 archivos (~2TB), principalmente documentos de Office (Word, Excel, PowerPoint), PDFs, imágenes y algunos archivos de AutoCAD..."></textarea>
+                </div>
+
+                <div class="question-card">
+                    <label class="question-label">
+                        ¿Cómo está estructurada la información en el servidor de archivos (por departamentos, proyectos, etc.)?
+                        <span class="purpose">
+                            Para comprender la estructura actual y planificar una arquitectura de información óptima en SharePoint.
+                        </span>
+                    </label>
+                    <textarea name="inv_2" rows="4" placeholder="Ej: La información está organizada por departamentos en el primer nivel (Ventas, Marketing, RRHH, Finanzas), y cada departamento tiene subcarpetas por proyecto o año..."></textarea>
+                </div>
+
+                <div class="question-card">
+                    <label class="question-label">
+                        ¿Existe contenido obsoleto o duplicado que no debería migrarse?
+                        <span class="purpose">
+                            Para identificar oportunidades de limpieza y asegurar que solo se migre contenido relevante, facilitando la organización y adopción.
+                        </span>
+                    </label>
+                    <textarea name="inv_3" rows="4" placeholder="Ej: Sí, estimamos que aproximadamente 30% del contenido es obsoleto (proyectos archivados de hace más de 5 años, versiones antiguas de documentos, archivos temporales)..."></textarea>
+                </div>
+
+                <div class="question-card">
+                    <label class="question-label">
+                        ¿Qué metadatos o clasificaciones manejan actualmente para los archivos, si alguno?
+                        <span class="purpose">
+                            Para determinar cómo implementar metadatos en SharePoint y mejorar la búsqueda y organización de documentos.
+                        </span>
+                    </label>
+                    <textarea name="inv_4" rows="4" placeholder="Ej: Actualmente no usamos metadatos estructurados. Solo tenemos convenciones de nombres de archivo que incluyen fecha y tipo de documento..."></textarea>
+                </div>
+
+                <div class="question-card">
+                    <label class="question-label">
+                        ¿Tienen identificadas dependencias o vínculos entre archivos (por ejemplo, enlaces en documentos que apuntan a otros archivos)?
+                        <span class="purpose">
+                            Para planificar cómo mantener o actualizar esas referencias durante la migración y evitar enlaces rotos.
+                        </span>
+                    </label>
+                    <textarea name="inv_5" rows="4" placeholder="Ej: Sí, muchos documentos de Excel tienen vínculos a otros archivos Excel, y algunos documentos de Word contienen enlaces a archivos en carpetas compartidas..."></textarea>
+                </div>
+            </div>
+
+            <div class="form-actions">
+                <a href="index.html" class="btn btn-outline">
+                    <i class="fas fa-home"></i> Volver al Inicio
+                </a>
+                <button type="button" class="btn btn-secondary" id="guardarBorradorBtn">
+                    <i class="fas fa-save"></i> Guardar Borrador
+                </button>
+                <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-arrow-right"></i> Guardar y Continuar
+                </button>
+            </div>
+        </form>
+        <footer class="footer">
+            <div class="footer-content">
+                <a href="https://unikal.tech" target="_blank" class="footer-logo" title="UNIKAL.TECH - IT Group">
+                    <img src="images/unikal-tech-logo.png" alt="UNIKAL.TECH Partners">
+                </a>
+                <div class="footer-text">
+                    Desarrollado por <a href="https://unikal.tech" target="_blank">UNIKAL TECH PARTNERS</a> © 2025
+                </div>
+                
+                <div class="footer-legal">
+                    <p class="footer-legal-text">
+                        Los datos personales recabados a través de este cuestionario serán tratados de conformidad con el 
+                        Reglamento (UE) 2016/679 (RGPD) y la Ley Orgánica 3/2018 (LOPDGDD). Los datos serán utilizados 
+                        exclusivamente para evaluar y planificar la migración a SharePoint Online y no serán cedidos a terceros 
+                        sin su consentimiento expreso. Puede ejercer sus derechos de acceso, rectificación, supresión, 
+                        limitación, portabilidad y oposición contactando con el responsable del tratamiento.
+                    </p>
+                    <div class="footer-links">
+                        <a href="https://unikal.tech/politica/" target="_blank">
+                            <i class="fas fa-shield-alt"></i> Política de Privacidad
+                        </a>
+                        <a href="https://unikal.tech/aviso-legal/" target="_blank">
+                            <i class="fas fa-gavel"></i> Aviso Legal
+                        </a>
+                        <a href="https://unikal.tech/politica-de-cookies/" target="_blank">
+                            <i class="fas fa-cookie-bite"></i> Política de Cookies
+                        </a>
+                        <a href="https://unikal.tech/#contacto" target="_blank">
+                            <i class="fas fa-envelope"></i> Contacto
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/seccion.js"></script>
+</body>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sección 3: Gobernanza y Adopción - Assessment Microsoft 365</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <a href="https://unikal.tech" target="_blank" class="header-logo" title="UNIKAL.TECH">
+                <img src="images/unikal-tech-logo.png" alt="UNIKAL.TECH">
+            </a>
+            <div class="header-content">
+                <i class="fas fa-shield-alt"></i>
+                <h1>Sección 3: Gobernanza y Adopción</h1>
+                <p class="subtitle">Políticas, Estructura y Estrategia de Éxito</p>
+            </div>
+        </header>
+
+        <div class="navigation-steps">
+            <div class="step"><div class="step-number">1</div><div class="step-label">Inicio</div></div>
+            <div class="step"><div class="step-number">2</div><div class="step-label">Usuarios</div></div>
+            <div class="step"><div class="step-number">3</div><div class="step-label">Gobernanza</div></div>
+            <div class="step"><div class="step-number">4</div><div class="step-label">IA</div></div>
+            <div class="step"><div class="step-number">5</div><div class="step-label">Seguridad</div></div>
+            <div class="step"><div class="step-number">6</div><div class="step-label">Final</div></div>
+        </div>
+
+        <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+        <div class="progress-text" id="progressText">0% completado</div>
+
+        <form>
+            <div class="section">
+                <h2 class="section-title"><i class="fas fa-balance-scale"></i> Gobernanza</h2>
+                <div class="section-description">Establecer políticas claras es fundamental para mantener el orden y la eficiencia en SharePoint.</div>
+
+                <div class="question-card">
+                    <label class="question-label">
+                        ¿Cuentan con un modelo de gobernanza actual para la gestión de documentos (políticas de organización de carpetas, propietarios de contenido, etc.)?
+                        <span class="purpose">Para entender las prácticas actuales y adaptarlas o mejorarlas en el entorno SharePoint Online.</span>
+                    </label>
+                    <textarea name="gob_1" rows="4" placeholder="Ej: Actualmente no tenemos un modelo formal. Cada departamento gestiona sus carpetas de manera independiente sin políticas documentadas..."></textarea>
+                </div>
+
+                <div class="question-card">
+                    <label class="question-label">
+                        ¿Quién será responsable de administrar la plataforma (propietarios de sitios, administradores) y cómo se asignarán dichas responsabilidades?
+                        <span class="purpose">Para establecer una estructura clara de roles.</span>
+                    </label>
+                    <textarea name="gob_2" rows="4" placeholder="Ej: El equipo de IT será el administrador global, cada departamento tendrá un propietario de sitio designado, y los jefes de equipo serán miembros con permisos de contribución..."></textarea>
+                </div>
+
+                <div class="question-card">
+                    <label class="question-label">
+                        ¿Cómo se definirá la estructura de sitios y bibliotecas en SharePoint (por departamento, proyecto, ubicación geográfica, etc.)?
+                        <span class="purpose">Para alinear la arquitectura de la información en SharePoint con la organización del negocio.</span>
+                    </label>
+                    <textarea name="gob_3" rows="4" placeholder="Ej: Queremos una estructura por departamento en el primer nivel, con sitios de equipo para proyectos específicos. También consideramos sitios por ubicación geográfica para nuestras 3 oficinas..."></textarea>
+                </div>
+
+                <div class="question-card">
+                    <label class="question-label">
+                        ¿Qué políticas se implementarán para el ciclo de vida de los documentos (archivado, expiración, eliminación)?
+                        <span class="purpose">Para asegurar que la información se gestione según su valor y vigencia.</span>
+                    </label>
+                    <textarea name="gob_4" rows="4" placeholder="Ej: Documentos financieros deben conservarse 7 años por regulación, contratos 10 años. Borradores y archivos temporales se eliminarán automáticamente después de 6 meses de inactividad..."></textarea>
+                </div>
+
+                <div class="question-card">
+                    <label class="question-label">
+                        ¿Cómo controlarán la creación de nuevos sitios o grupos para evitar una proliferación descontrolada?
+                        <span class="purpose">Para definir procedimientos que mantengan el orden y la coherencia en la plataforma.</span>
+                    </label>
+                    <textarea name="gob_5" rows="4" placeholder="Ej: Solo los gerentes de departamento podrán solicitar nuevos sitios mediante un formulario de aprobación. Se hará revisión trimestral de sitios inactivos para archivar o eliminar..."></textarea>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title"><i class="fas fa-rocket"></i> Adopción y Éxito</h2>
+                <div class="section-description">La adopción exitosa requiere planificación, capacitación y medición continua.</div>
+
+                <div class="question-card">
+                    <label class="question-label">
+                        ¿Tienen una estrategia de capacitación y comunicación para introducir SharePoint Online a los empleados?
+                        <span class="purpose">Para garantizar que los usuarios comprendan las nuevas herramientas y prácticas.</span>
+                    </label>
+                    <textarea name="ado_1" rows="4" placeholder="Ej: Planeamos sesiones de formación presenciales de 2 horas por departamento, videos tutoriales cortos, y un canal de Teams para soporte continuo. Comunicación inicial del CEO explicando los beneficios..."></textarea>
+                </div>
+
+                <div class="question-card">
+                    <label class="question-label">
+                        ¿Cómo medirán el éxito de la adopción de SharePoint Online? (ej., métricas de uso, reducción de almacenamiento, satisfacción del usuario)
+                        <span class="purpose">Para definir indicadores clave (KPIs) que permitan evaluar el progreso.</span>
+                    </label>
+                    <textarea name="ado_2" rows="4" placeholder="Ej: Mediremos número de usuarios activos mensuales, cantidad de documentos colaborados en coautoría, reducción de emails con adjuntos, encuestas de satisfacción trimestrales..."></textarea>
+                </div>
+
+                <div class="question-card">
+                    <label class="question-label">
+                        ¿Han identificado casos de uso prioritarios o "victorias rápidas" que muestren el valor de la plataforma tempranamente?
+                        <span class="purpose">Para enfocarse en escenarios de alto impacto y lograr beneficios tempranos.</span>
+                    </label>
+                    <textarea name="ado_3" rows="4" placeholder="Ej: El equipo de Ventas ya está ansioso por colaborar en propuestas comerciales en tiempo real. Marketing quiere centralizar sus materiales de campaña. Estos serían buenos pilotos iniciales..."></textarea>
+                </div>
+
+                <div class="question-card">
+                    <label class="question-label">
+                        ¿Existe un plan de soporte post-implementación (mesa de ayuda, superusuarios) para resolver dudas y problemas de los usuarios?
+                        <span class="purpose">Para asegurar que tras la migración los empleados cuenten con apoyo continuo.</span>
+                    </label>
+                    <textarea name="ado_4" rows="4" placeholder="Ej: Crearemos un equipo de 3 superusuarios capacitados por cada 50 empleados. Mesa de ayuda interna vía Teams disponible 9-18h. FAQ documentado en un sitio de SharePoint..."></textarea>
+                </div>
+
+                <div class="question-card">
+                    <label class="question-label">
+                        ¿Cómo se recogerá y utilizará la retroalimentación de los usuarios para mejorar la plataforma?
+                        <span class="purpose">Para fomentar la mejora continua incorporando las sugerencias de los usuarios.</span>
+                    </label>
+                    <textarea name="ado_5" rows="4" placeholder="Ej: Encuestas rápidas mensuales vía Forms, buzón de sugerencias en Teams, reuniones trimestrales con superusuarios para identificar puntos de mejora y nuevas necesidades..."></textarea>
+                </div>
+            </div>
+
+            <div class="form-actions">
+                <button type="button" class="btn btn-outline" id="anteriorBtn"><i class="fas fa-arrow-left"></i> Anterior</button>
+                <button type="button" class="btn btn-secondary" id="guardarBorradorBtn"><i class="fas fa-save"></i> Guardar Borrador</button>
+                <button type="submit" class="btn btn-primary"><i class="fas fa-arrow-right"></i> Guardar y Continuar</button>
+            </div>
+        </form>
+        <footer class="footer">
+            <div class="footer-content">
+                <a href="https://unikal.tech" target="_blank" class="footer-logo" title="UNIKAL.TECH - IT Group">
+                    <img src="images/unikal-tech-logo.png" alt="UNIKAL.TECH Partners">
+                </a>
+                <div class="footer-text">
+                    Desarrollado por <a href="https://unikal.tech" target="_blank">UNIKAL TECH PARTNERS</a> © 2025
+                </div>
+                
+                <div class="footer-legal">
+                    <p class="footer-legal-text">
+                        Los datos personales recabados a través de este cuestionario serán tratados de conformidad con el 
+                        Reglamento (UE) 2016/679 (RGPD) y la Ley Orgánica 3/2018 (LOPDGDD). Los datos serán utilizados 
+                        exclusivamente para evaluar y planificar la migración a SharePoint Online y no serán cedidos a terceros 
+                        sin su consentimiento expreso. Puede ejercer sus derechos de acceso, rectificación, supresión, 
+                        limitación, portabilidad y oposición contactando con el responsable del tratamiento.
+                    </p>
+                    <div class="footer-links">
+                        <a href="https://unikal.tech/politica/" target="_blank">
+                            <i class="fas fa-shield-alt"></i> Política de Privacidad
+                        </a>
+                        <a href="https://unikal.tech/aviso-legal/" target="_blank">
+                            <i class="fas fa-gavel"></i> Aviso Legal
+                        </a>
+                        <a href="https://unikal.tech/politica-de-cookies/" target="_blank">
+                            <i class="fas fa-cookie-bite"></i> Política de Cookies
+                        </a>
+                        <a href="https://unikal.tech/#contacto" target="_blank">
+                            <i class="fas fa-envelope"></i> Contacto
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/seccion.js"></script>
+</body>
+</html>

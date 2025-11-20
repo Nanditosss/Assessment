@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sección 5: Cultura y Seguridad - Assessment Microsoft 365</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <a href="https://unikal.tech" target="_blank" class="header-logo" title="UNIKAL.TECH">
+                <img src="images/unikal-tech-logo.png" alt="UNIKAL.TECH">
+            </a>
+            <div class="header-content">
+                <i class="fas fa-lock"></i>
+                <h1>Sección 5: Cultura y Seguridad</h1>
+                <p class="subtitle">Gestión del Cambio y Protección de Datos</p>
+            </div>
+        </header>
+
+        <div class="navigation-steps">
+            <div class="step"><div class="step-number">1</div><div class="step-label">Inicio</div></div>
+            <div class="step"><div class="step-number">2</div><div class="step-label">Usuarios</div></div>
+            <div class="step"><div class="step-number">3</div><div class="step-label">Gobernanza</div></div>
+            <div class="step"><div class="step-number">4</div><div class="step-label">IA</div></div>
+            <div class="step"><div class="step-number">5</div><div class="step-label">Seguridad</div></div>
+            <div class="step"><div class="step-number">6</div><div class="step-label">Final</div></div>
+        </div>
+
+        <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+        <div class="progress-text" id="progressText">0% completado</div>
+
+        <form>
+            <div class="section">
+                <h2 class="section-title"><i class="fas fa-chart-line"></i> Cultura Digital y Gestión del Cambio</h2>
+                <div class="section-description">El éxito de la transformación digital depende de la gestión efectiva del cambio organizacional.</div>
+
+                <div class="question-card">
+                    <label class="question-label">
+                        ¿Cómo describirían la disposición de la organización hacia nuevas herramientas digitales?
+                        <span class="purpose">Para entender la madurez digital del equipo y adaptar las estrategias de gestión del cambio.</span>
+                    </label>
+                    <textarea name="cult_1" rows="4" placeholder="Ej: Mixta. Los equipos jóvenes están muy abiertos y usan Teams diariamente. Los empleados senior prefieren lo tradicional (email, servidor de archivos). Hay cierta resistencia al cambio en algunos departamentos..."></textarea>
+                </div>
+
+                <div class="question-card">
+                    <label class="question-label">
+                        ¿Qué lecciones han aprendido de iniciativas previas de transformación digital en la organización?
+                        <span class="purpose">Para anticipar resistencias o desafíos conocidos.</span>
+                    </label>
+                    <textarea name="cult_2" rows="4" placeholder="Ej: En una migración anterior de sistema ERP, subestimamos la formación necesaria y hubo mucha frustración inicial. Aprendimos que necesitamos comunicación clara de beneficios y soporte continuo, no solo una capacitación inicial..."></textarea>
+                </div>
+
+                <div class="question-card">
+                    <label class="question-label">
+                        ¿Cuentan con un plan o equipo dedicado para la gestión del cambio durante esta migración?
+                        <span class="purpose">Para asegurar que la adopción tecnológica esté acompañada de comunicación y formación adecuadas.</span>
+                    </label>
+                    <textarea name="cult_3" rows="4" placeholder="Ej: Estamos formando un equipo de transformación digital con representantes de cada área. Ellos coordinarán comunicaciones, capacitaciones, recogerán feedback y serán el puente entre IT y usuarios finales..."></textarea>
+                </div>
+
+                <div class="question-card">
+                    <label class="question-label">
+                        ¿Cómo involucrará la dirección de la empresa a los empleados en esta transición?
+                        <span class="purpose">Para garantizar el apoyo y liderazgo ejecutivo en el proyecto.</span>
+                    </label>
+                    <textarea name="cult_4" rows="4" placeholder="Ej: El CEO enviará un mensaje explicando por qué es importante esta transformación. Los gerentes participarán en las capacitaciones y usarán la plataforma públicamente para dar ejemplo. Comunicaciones regulares sobre avances..."></textarea>
+                </div>
+
+                <div class="question-card">
+                    <label class="question-label">
+                        ¿De qué manera recopilarán y abordarán las inquietudes o sugerencias de los empleados durante el cambio?
+                        <span class="purpose">Para promover un diálogo abierto que permita ajustar la estrategia de adopción.</span>
+                    </label>
+                    <textarea name="cult_5" rows="4" placeholder="Ej: Encuestas anónimas mensuales, buzón digital de sugerencias, sesiones 'Ask me Anything' con el equipo del proyecto cada quincena, y análisis de tickets de soporte para identificar problemas comunes..."></textarea>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title"><i class="fas fa-shield-virus"></i> Seguridad y Cumplimiento</h2>
+                <div class="section-description">La seguridad de la información es crítica en la nube. Evaluemos sus requisitos de protección y cumplimiento.</div>
+
+                <div class="question-card">
+                    <label class="question-label">
+                        ¿Qué controles de seguridad necesitan aplicar en SharePoint Online para alinearse con el modelo Zero Trust?
+                        <span class="purpose">Para garantizar que la migración a la nube mantenga o mejore la postura de seguridad.</span>
+                    </label>
+                    <textarea name="seg_1" rows="4" placeholder="Ej: Requerimos MFA obligatorio para todos los usuarios, acceso condicional basado en ubicación (bloquear países de alto riesgo), dispositivos deben estar registrados en Intune, sesión máxima de 8 horas..."></textarea>
+                </div>
+
+                <div class="question-card">
+                    <label class="question-label">
+                        ¿Manejan datos confidenciales que requieran ser clasificados con etiquetas de sensibilidad y protegidos?
+                        <span class="purpose">Para determinar la necesidad de aplicar Microsoft Purview Information Protection.</span>
+                    </label>
+                    <textarea name="seg_2" rows="4" placeholder="Ej: Sí, manejamos datos personales de clientes (GDPR), información financiera confidencial, contratos con cláusulas de confidencialidad, y propiedad intelectual. Necesitamos etiquetas: Pública, Interna, Confidencial, Altamente Confidencial..."></textarea>
+                </div>
+
+                <div class="question-card">
+                    <label class="question-label">
+                        ¿Qué políticas de Prevención de Pérdida de Datos (DLP) deben establecerse para el contenido en la nube?
+                        <span class="purpose">Para evitar fugas de información asegurando que los datos críticos no puedan compartirse indebidamente.</span>
+                    </label>
+                    <textarea name="seg_3" rows="4" placeholder="Ej: Prevenir que se compartan externamente archivos con información de tarjetas de crédito, números de seguridad social, o etiquetados como Confidencial. Alertar cuando alguien intenta compartir grandes volúmenes de datos..."></textarea>
+                </div>
+
+                <div class="question-card">
+                    <label class="question-label">
+                        ¿Cuáles son los requisitos de retención o eliminación de documentos que deben cumplirse (legales o corporativos)?
+                        <span class="purpose">Para configurar políticas y etiquetas de retención en SharePoint.</span>
+                    </label>
+                    <textarea name="seg_4" rows="4" placeholder="Ej: Legal: 10 años para contratos, 7 años para registros financieros. RRHH: expedientes de empleados 5 años post-salida. Marketing: campañas 3 años. Borradores: 1 año de inactividad antes de eliminación..."></textarea>
+                </div>
+
+                <div class="question-card">
+                    <label class="question-label">
+                        ¿Cómo supervisarán y responderán a incidentes de seguridad o cumplimiento en el entorno de Microsoft 365?
+                        <span class="purpose">Para verificar que se cuente con un plan y herramientas para detectar brechas.</span>
+                    </label>
+                    <textarea name="seg_5" rows="4" placeholder="Ej: Monitoreo continuo con Microsoft Defender for Cloud Apps, alertas automáticas al equipo de seguridad por actividades sospechosas, revisión mensual de logs de acceso, proceso documentado de respuesta a incidentes con IT y Legal..."></textarea>
+                </div>
+            </div>
+
+            <div class="form-actions">
+                <button type="button" class="btn btn-outline" id="anteriorBtn"><i class="fas fa-arrow-left"></i> Anterior</button>
+                <button type="button" class="btn btn-secondary" id="guardarBorradorBtn"><i class="fas fa-save"></i> Guardar Borrador</button>
+                <button type="submit" class="btn btn-primary"><i class="fas fa-arrow-right"></i> Guardar y Continuar</button>
+            </div>
+        </form>
+        <footer class="footer">
+            <div class="footer-content">
+                <a href="https://unikal.tech" target="_blank" class="footer-logo" title="UNIKAL.TECH - IT Group">
+                    <img src="images/unikal-tech-logo.png" alt="UNIKAL.TECH Partners">
+                </a>
+                <div class="footer-text">
+                    Desarrollado por <a href="https://unikal.tech" target="_blank">UNIKAL TECH PARTNERS</a> © 2025
+                </div>
+                
+                <div class="footer-legal">
+                    <p class="footer-legal-text">
+                        Los datos personales recabados a través de este cuestionario serán tratados de conformidad con el 
+                        Reglamento (UE) 2016/679 (RGPD) y la Ley Orgánica 3/2018 (LOPDGDD). Los datos serán utilizados 
+                        exclusivamente para evaluar y planificar la migración a SharePoint Online y no serán cedidos a terceros 
+                        sin su consentimiento expreso. Puede ejercer sus derechos de acceso, rectificación, supresión, 
+                        limitación, portabilidad y oposición contactando con el responsable del tratamiento.
+                    </p>
+                    <div class="footer-links">
+                        <a href="https://unikal.tech/politica/" target="_blank">
+                            <i class="fas fa-shield-alt"></i> Política de Privacidad
+                        </a>
+                        <a href="https://unikal.tech/aviso-legal/" target="_blank">
+                            <i class="fas fa-gavel"></i> Aviso Legal
+                        </a>
+                        <a href="https://unikal.tech/politica-de-cookies/" target="_blank">
+                            <i class="fas fa-cookie-bite"></i> Política de Cookies
+                        </a>
+                        <a href="https://unikal.tech/#contacto" target="_blank">
+                            <i class="fas fa-envelope"></i> Contacto
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/seccion.js"></script>
+</body>
+</html>

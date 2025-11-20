@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Test Navegación</title>
+</head>
+<body>
+    <h1>Test de Navegación</h1>
+    <div id="output"></div>
+    
+    <script>
+        const output = document.getElementById('output');
+        
+        function log(msg) {
+            output.innerHTML += `<p>${msg}</p>`;
+            console.log(msg);
+        }
+        
+        function getCurrentSection() {
+            const path = window.location.pathname;
+            const match = path.match(/seccion(\d+)\.html/);
+            return match ? parseInt(match[1]) : 1;
+        }
+        
+        // Test con diferentes URLs
+        const testUrls = [
+            'http://example.com/seccion1.html',
+            'http://example.com/seccion2.html',
+            'http://example.com/seccion3.html',
+            'http://example.com/seccion4.html',
+            'http://example.com/seccion5.html',
+            'http://example.com/seccion6.html',
+            'http://example.com/index.html'
+        ];
+        
+        log('=== TEST DE getCurrentSection() ===');
+        log('URL actual: ' + window.location.pathname);
+        log('Sección detectada: ' + getCurrentSection());
+        log('');
+        
+        log('=== TEST DE NAVEGACIÓN ===');
+        for (let i = 1; i <= 6; i++) {
+            const nextSection = i < 6 ? i + 1 : 'confirmacion';
+            log(`Desde sección ${i} → debería ir a: seccion${nextSection}.html`);
+        }
+    </script>
+</body>
+</html>
