@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sección 4: IA y Automatización - Assessment Microsoft 365</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <a href="https://unikal.tech" target="_blank" class="header-logo" title="UNIKAL.TECH">
+                <img src="images/unikal-tech-logo.png" alt="UNIKAL.TECH">
+            </a>
+            <div class="header-content">
+                <i class="fas fa-brain"></i>
+                <h1>Sección 4: IA y Automatización</h1>
+                <p class="subtitle">Inteligencia Artificial y Power Platform</p>
+            </div>
+        </header>
+
+        <div class="navigation-steps">
+            <div class="step completed"><div class="step-number">1</div><div class="step-label">Inicio</div></div>
+            <div class="step completed"><div class="step-number">2</div><div class="step-label">Usuarios</div></div>
+            <div class="step completed"><div class="step-number">3</div><div class="step-label">Gobernanza</div></div>
+            <div class="step active"><div class="step-number">4</div><div class="step-label">IA</div></div>
+            <div class="step"><div class="step-number">5</div><div class="step-label">Seguridad</div></div>
+            <div class="step"><div class="step-number">6</div><div class="step-label">Final</div></div>
+        </div>
+
+        <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+        <div class="progress-text" id="progressText">0% completado</div>
+
+        <form>
+            <div class="section">
+                <h2 class="section-title"><i class="fas fa-robot"></i> Inteligencia Artificial</h2>
+                <div class="section-description">Explore cómo la IA puede potenciar la productividad y gestión de información en su organización.</div>
+
+                <div class="question-card">
+                    <label class="question-label">
+                        ¿Qué uso de Inteligencia Artificial prevén en la gestión de la información y la colaboración? (ej., asistente tipo Copilot)
+                        <span class="purpose">Para identificar oportunidades de mejorar la productividad con IA.</span>
+                    </label>
+                    <textarea name="ia_1" rows="4" placeholder="Ej: Nos interesa que Copilot ayude a resumir documentos largos, generar borradores de emails, y buscar información relevante en toda la organización sin tener que saber dónde está exactamente..."></textarea>
+                </div>
+
+                <div class="question-card">
+                    <label class="question-label">
+                        ¿Necesitan extraer información o análisis avanzados de los documentos almacenados? (ej., reconocimiento de texto, análisis de datos)
+                        <span class="purpose">Para determinar si es necesario implementar servicios cognitivos o de búsqueda avanzada.</span>
+                    </label>
+                    <textarea name="ia_2" rows="4" placeholder="Ej: Tenemos muchos PDFs escaneados de contratos antiguos. Sería útil extraer datos clave automáticamente (fechas, montos, partes). También análisis de sentimiento en encuestas de clientes..."></textarea>
+                </div>
+
+                <div class="question-card">
+                    <label class="question-label">
+                        ¿Consideran útil que la plataforma sugiera contenido o personas relevantes automáticamente (búsqueda inteligente potenciada por IA)?
+                        <span class="purpose">Para explorar cómo las capacidades de búsqueda cognitiva pueden agilizar el acceso a la información.</span>
+                    </label>
+                    <textarea name="ia_3" rows="4" placeholder="Ej: Sí, definitivamente. Actualmente perdemos mucho tiempo buscando quién sabe qué o dónde está cierta información. Una búsqueda inteligente con sugerencias sería muy valiosa..."></textarea>
+                </div>
+
+                <div class="question-card">
+                    <label class="question-label">
+                        ¿Tienen interés en herramientas como Microsoft 365 Copilot para asistir en tareas de contenido (resumen de documentos, redacción)?
+                        <span class="purpose">Para evaluar la disposición a adoptar IA generativa integrada en la plataforma.</span>
+                    </label>
+                    <textarea name="ia_4" rows="4" placeholder="Ej: Mucho interés. Los ejecutivos quieren resúmenes automáticos de reuniones largas. El equipo de marketing quiere ayuda para redactar contenido. Legal quiere revisar contratos rápidamente..."></textarea>
+                </div>
+
+                <div class="question-card">
+                    <label class="question-label">
+                        ¿Esperan automatización inteligente en la clasificación o protección de documentos? (ej., etiquetado automático de sensibilidad)
+                        <span class="purpose">Para identificar necesidades de aplicar IA en la gestión de la información.</span>
+                    </label>
+                    <textarea name="ia_5" rows="4" placeholder="Ej: Sí, necesitamos que los documentos que contienen información financiera o datos personales se etiqueten automáticamente como 'Confidencial' para aplicar protección DLP sin depender del usuario..."></textarea>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title"><i class="fas fa-cog"></i> Automatización y Power Platform</h2>
+                <div class="section-description">Power Automate, Power Apps y Power BI pueden transformar sus procesos de negocio.</div>
+
+                <div class="question-card">
+                    <label class="question-label">
+                        ¿Qué procesos manuales existentes (aprobaciones, notificaciones, generación de informes) podrían automatizarse?
+                        <span class="purpose">Para detectar oportunidades de implementar flujos de trabajo con Power Automate.</span>
+                    </label>
+                    <textarea name="auto_1" rows="4" placeholder="Ej: Aprobaciones de vacaciones, solicitudes de compra bajo cierto monto, notificaciones cuando se sube un documento importante, generación automática de informes semanales..."></textarea>
+                </div>
+
+                <div class="question-card">
+                    <label class="question-label">
+                        ¿Requieren desarrollar aplicaciones o formularios personalizados para interactuar con los datos en SharePoint?
+                        <span class="purpose">Para evaluar si Power Apps puede cubrir necesidades de soluciones a medida.</span>
+                    </label>
+                    <textarea name="auto_2" rows="4" placeholder="Ej: Necesitamos un formulario para solicitudes de soporte IT, otro para registro de visitantes, y uno para evaluaciones de desempeño que se integre con la biblioteca de RRHH en SharePoint..."></textarea>
+                </div>
+
+                <div class="question-card">
+                    <label class="question-label">
+                        ¿Necesitan mejores reportes o visualizaciones de los datos/documentos una vez migrados (dashboards, KPIs)?
+                        <span class="purpose">Para considerar el uso de Power BI u otras herramientas.</span>
+                    </label>
+                    <textarea name="auto_3" rows="4" placeholder="Ej: Sí, queremos dashboards en tiempo real de: pipeline de ventas, estado de proyectos, métricas de uso de SharePoint, indicadores financieros clave, todo visualizado en Power BI..."></textarea>
+                </div>
+
+                <div class="question-card">
+                    <label class="question-label">
+                        ¿Utilizan actualmente macros, scripts u otras automatizaciones en el servidor de archivos?
+                        <span class="purpose">Para identificar funcionalidades existentes que deberán reimplementarse.</span>
+                    </label>
+                    <textarea name="auto_4" rows="4" placeholder="Ej: Tenemos macros en Excel que generan informes consolidados tomando datos de varios archivos. Scripts de PowerShell que hacen backups nocturnos. Algunas plantillas con macros de Word..."></textarea>
+                </div>
+
+                <div class="question-card">
+                    <label class="question-label">
+                        ¿Cómo planean aprovechar la integración de SharePoint con otras aplicaciones de Microsoft 365 para automatizar tareas cotidianas?
+                        <span class="purpose">Para asegurar que se exploten las capacidades nativas de la plataforma.</span>
+                    </label>
+                    <textarea name="auto_5" rows="4" placeholder="Ej: Queremos que cuando llega un email importante a un buzón compartido, automáticamente se cree una tarea en Planner y se notifique al equipo en Teams con el documento adjunto guardado en SharePoint..."></textarea>
+                </div>
+            </div>
+
+            <div class="form-actions">
+                <button type="button" class="btn btn-outline" id="anteriorBtn"><i class="fas fa-arrow-left"></i> Anterior</button>
+                <button type="button" class="btn btn-secondary" id="guardarBorradorBtn"><i class="fas fa-save"></i> Guardar Borrador</button>
+                <button type="submit" class="btn btn-primary"><i class="fas fa-arrow-right"></i> Guardar y Continuar</button>
+            </div>
+        </form>
+        <footer class="footer">
+            <div class="footer-content">
+                <a href="https://unikal.tech" target="_blank" class="footer-logo" title="UNIKAL.TECH - IT Group">
+                    <img src="images/unikal-tech-logo.png" alt="UNIKAL.TECH Partners">
+                </a>
+                <div class="footer-text">
+                    Desarrollado por <a href="https://unikal.tech" target="_blank">UNIKAL TECH PARTNERS</a> © 2025
+                </div>
+                
+                <div class="footer-legal">
+                    <p class="footer-legal-text">
+                        Los datos personales recabados a través de este cuestionario serán tratados de conformidad con el 
+                        Reglamento (UE) 2016/679 (RGPD) y la Ley Orgánica 3/2018 (LOPDGDD). Los datos serán utilizados 
+                        exclusivamente para evaluar y planificar la migración a SharePoint Online y no serán cedidos a terceros 
+                        sin su consentimiento expreso. Puede ejercer sus derechos de acceso, rectificación, supresión, 
+                        limitación, portabilidad y oposición contactando con el responsable del tratamiento.
+                    </p>
+                    <div class="footer-links">
+                        <a href="https://unikal.tech/politica/" target="_blank">
+                            <i class="fas fa-shield-alt"></i> Política de Privacidad
+                        </a>
+                        <a href="https://unikal.tech/aviso-legal/" target="_blank">
+                            <i class="fas fa-gavel"></i> Aviso Legal
+                        </a>
+                        <a href="https://unikal.tech/politica-de-cookies/" target="_blank">
+                            <i class="fas fa-cookie-bite"></i> Política de Cookies
+                        </a>
+                        <a href="https://unikal.tech/#contacto" target="_blank">
+                            <i class="fas fa-envelope"></i> Contacto
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/seccion.js"></script>
+</body>
+</html>

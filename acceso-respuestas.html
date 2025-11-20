@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceso a Respuestas - Assessment Microsoft 365</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <style>
+        .access-container {
+            max-width: 600px;
+            margin: 80px auto;
+            padding: 40px;
+            background: var(--blanco);
+            border-radius: 12px;
+            box-shadow: var(--shadow-hover);
+        }
+        .access-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+            border-bottom: 2px solid var(--gris);
+        }
+        .access-tab {
+            flex: 1;
+            padding: 15px;
+            background: transparent;
+            border: none;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--negro);
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s ease;
+        }
+        .access-tab.active {
+            color: var(--turquesa);
+            border-bottom-color: var(--turquesa);
+        }
+        .access-tab:hover {
+            background: rgba(0, 168, 156, 0.05);
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.4s ease;
+        }
+        .access-icon {
+            font-size: 60px;
+            color: var(--turquesa);
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .access-title {
+            text-align: center;
+            color: var(--negro);
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        .access-description {
+            text-align: center;
+            color: var(--verde-oscuro);
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" style="max-width: 100%; background: transparent; box-shadow: none;">
+        <div class="access-container">
+            <div style="text-align: center; margin-bottom: 30px;">
+                <img src="images/unikal-tech-logo.png" alt="UNIKAL.TECH" style="height: 60px;">
+            </div>
+
+            <div class="access-tabs">
+                <button class="access-tab active" onclick="switchTab('cliente')">
+                    <i class="fas fa-user"></i> Acceso Cliente
+                </button>
+                <button class="access-tab" onclick="switchTab('admin')">
+                    <i class="fas fa-user-shield"></i> Administrador
+                </button>
+            </div>
+
+            <!-- Tab Cliente -->
+            <div id="clienteTab" class="tab-content active">
+                <div class="access-icon">
+                    <i class="fas fa-envelope-open-text"></i>
+                </div>
+                <h2 class="access-title">Consultar Mis Respuestas</h2>
+                <p class="access-description">
+                    Ingrese el email que utilizó al completar el cuestionario para ver sus respuestas.
+                </p>
+
+                <form id="clienteForm">
+                    <div class="form-group">
+                        <label for="clienteEmail">Email *</label>
+                        <input type="email" id="clienteEmail" required placeholder="su.email@empresa.com">
+                    </div>
+
+                    <div class="alert alert-info">
+                        <i class="fas fa-info-circle"></i>
+                        <div>
+                            <strong>Privacidad:</strong> Solo podrá ver las respuestas asociadas a su email.
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 20px;">
+                        <i class="fas fa-sign-in-alt"></i> Acceder a Mis Respuestas
+                    </button>
+                </form>
+            </div>
+
+            <!-- Tab Administrador -->
+            <div id="adminTab" class="tab-content">
+                <div class="access-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h2 class="access-title">Acceso Administrador</h2>
+                <p class="access-description">
+                    Área restringida para administradores de UNIKAL.TECH. Ingrese su contraseña para ver todas las respuestas.
+                </p>
+
+                <form id="adminForm">
+                    <div class="form-group">
+                        <label for="adminPassword">Contraseña de Administrador *</label>
+                        <input type="password" id="adminPassword" required placeholder="••••••••">
+                    </div>
+
+                    <div class="alert alert-warning">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <div>
+                            <strong>Acceso Restringido:</strong> Solo personal autorizado de UNIKAL.TECH.
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 20px;">
+                        <i class="fas fa-unlock"></i> Acceder como Administrador
+                    </button>
+                </form>
+            </div>
+
+            <div style="text-align: center; margin-top: 30px; padding-top: 20px; border-top: 1px solid var(--gris);">
+                <a href="index.html" style="color: var(--turquesa); text-decoration: none; font-weight: 600;">
+                    <i class="fas fa-arrow-left"></i> Volver al Inicio
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/auth.js"></script>
+    <script>
+        function switchTab(tab) {
+            // Actualizar tabs
+            document.querySelectorAll('.access-tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            
+            if (tab === 'cliente') {
+                document.querySelector('.access-tab:first-child').classList.add('active');
+                document.getElementById('clienteTab').classList.add('active');
+            } else {
+                document.querySelector('.access-tab:last-child').classList.add('active');
+                document.getElementById('adminTab').classList.add('active');
+            }
+        }
+
+        // Form cliente
+        document.getElementById('clienteForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = document.getElementById('clienteEmail').value.trim();
+            
+            if (email) {
+                setCurrentUserEmail(email);
+                window.location.href = 'respuestas.html';
+            }
+        });
+
+        // Form admin
+        document.getElementById('adminForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const password = document.getElementById('adminPassword').value;
+            
+            if (adminLogin(password)) {
+                window.location.href = 'respuestas.html';
+            } else {
+                alert('Contraseña incorrecta. Acceso denegado.');
+                document.getElementById('adminPassword').value = '';
+            }
+        });
+
+        // Limpiar sesión al cargar la página
+        sessionStorage.removeItem('admin_authenticated');
+        sessionStorage.removeItem('user_email');
+    </script>
+</body>
+</html>
