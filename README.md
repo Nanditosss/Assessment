@@ -3,9 +3,13 @@
 ## 🌐 URLs de Producción
 
 - **Cloudflare Pages:** https://assessment-m365-v2.pages.dev
-- **URL del despliegue:** https://35255b5d.assessment-m365-v2.pages.dev
+- **Último despliegue:** https://d11b3d6a.assessment-m365-v2.pages.dev
 - **GitHub:** https://github.com/Nanditosss/Assessment
 - **Sandbox:** https://3000-ium0dwz6mty78z96fpv3x-82b888ba.sandbox.novita.ai
+
+### 🔧 Notas Técnicas
+- **Cloudflare Pages** sirve URLs sin extensión `.html` (ej: `/seccion3` en lugar de `/seccion3.html`)
+- El JavaScript detecta automáticamente el formato de URL para compatibilidad total
 
 ## 📋 Descripción del Proyecto
 
