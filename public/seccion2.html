@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sección 2: Usuarios y Requisitos - Assessment Microsoft 365</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <a href="https://unikal.tech" target="_blank" class="header-logo" title="UNIKAL.TECH">
+                <img src="images/unikal-tech-logo.png" alt="UNIKAL.TECH">
+            </a>
+            <div class="header-content">
+                <i class="fas fa-users-cog"></i>
+                <h1>Sección 2: Usuarios y Requisitos</h1>
+                <p class="subtitle">Perfiles de Usuario y Necesidades Técnicas</p>
+            </div>
+        </header>
+
+        <div class="navigation-steps">
+            <div class="step completed">
+                <div class="step-number">1</div>
+                <div class="step-label">Inicio</div>
+            </div>
+            <div class="step active">
+                <div class="step-number">2</div>
+                <div class="step-label">Usuarios</div>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-label">Gobernanza</div>
+            </div>
+            <div class="step">
+                <div class="step-number">4</div>
+                <div class="step-label">IA</div>
+            </div>
+            <div class="step">
+                <div class="step-number">5</div>
+                <div class="step-label">Seguridad</div>
+            </div>
+            <div class="step">
+                <div class="step-number">6</div>
+                <div class="step-label">Final</div>
+            </div>
+        </div>
+
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+        </div>
+        <div class="progress-text" id="progressText">0% completado</div>
+
+        <form>
+            <!-- Usuarios -->
+            <div class="section">
+                <h2 class="section-title">
+                    <i class="fas fa-users"></i>
+                    Usuarios y Colaboración
+                </h2>
+                <div class="section-description">
+                    Comprender a los usuarios es fundamental para el éxito de la migración y adopción de SharePoint Online.
+                </div>
+
+                <div class="question-card">
+                    <label class="question-label">
+                        ¿Quiénes serán los principales usuarios o grupos de usuarios de SharePoint Online tras la migración (departamentos, equipos, roles)?
+                        <span class="purpose">
+                            Para identificar a los stakeholders clave y enfocar la solución en sus necesidades.
+                        </span>
+                    </label>
+                    <textarea name="usu_1" rows="4" placeholder="Ej: Todos los empleados (300 personas), principalmente equipos de Ventas, Marketing, Operaciones, RRHH y Dirección. También colaboradores externos ocasionales..."></textarea>
+                </div>
+
+                <div class="question-card">
+                    <label class="question-label">
+                        ¿Cómo colaboran actualmente los usuarios con los archivos (envío de adjuntos por correo, carpetas compartidas, duplicación de archivos, etc.)?
+                        <span class="purpose">
+                            Para comprender los hábitos de trabajo actuales y orientar la capacitación aprovechando funcionalidades colaborativas de SharePoint.
+                        </span>
+                    </label>
+                    <textarea name="usu_2" rows="4" placeholder="Ej: Principalmente por email con adjuntos, lo que genera múltiples versiones. También usan carpetas compartidas en red, pero sin control de versiones..."></textarea>
+                </div>
+
+                <div class="question-card">
+                    <label class="question-label">
+                        ¿Cuál es el nivel de familiaridad de los usuarios con las herramientas de Microsoft 365 (SharePoint, OneDrive, Teams)?
+                        <span class="purpose">
+                            Para evaluar la necesidad de formación y soporte adicional, asegurando una transición fluida.
+                        </span>
+                    </label>
+                    <textarea name="usu_3" rows="4" placeholder="Ej: Nivel bajo a medio. Usan Outlook y Office diariamente, pero pocos han trabajado con SharePoint o Teams. OneDrive es prácticamente desconocido..."></textarea>
+                </div>
+
+                <div class="question-card">
+                    <label class="question-label">
+                        ¿Existen usuarios externos (clientes, proveedores) con quienes se comparten archivos actualmente?
+                        <span class="purpose">
+                            Para determinar los requisitos de acceso externo seguro en SharePoint manteniendo la protección de la información.
+                        </span>
+                    </label>
+                    <textarea name="usu_4" rows="4" placeholder="Ej: Sí, compartimos documentos regularmente con 10-15 proveedores estratégicos y ocasionalmente con clientes para revisión de proyectos..."></textarea>
+                </div>
+
+                <div class="question-card">
+                    <label class="question-label">
+                        ¿Han identificado "campeones" o líderes internos que puedan impulsar la adopción de la plataforma?
+                        <span class="purpose">
+                            Para apoyarse en líderes internos que promuevan la cultura digital y faciliten la gestión del cambio.
+                        </span>
+                    </label>
+                    <textarea name="usu_5" rows="4" placeholder="Ej: Sí, tenemos 3 gerentes de departamento muy entusiastas con la tecnología y 2 colaboradores del área de IT que podrían ser embajadores..."></textarea>
+                </div>
+            </div>
+
+            <!-- Requisitos Técnicos -->
+            <div class="section">
+                <h2 class="section-title">
+                    <i class="fas fa-cogs"></i>
+                    Requisitos Técnicos
+                </h2>
+                <div class="section-description">
+                    Evaluemos los aspectos técnicos que impactarán en la estrategia de migración y configuración de SharePoint.
+                </div>
+
+                <div class="question-card">
+                    <label class="question-label">
+                        ¿Qué limitaciones o consideraciones técnicas existen en el entorno actual (ancho de banda, ventanas de tiempo para migrar, tipos o tamaños de archivo especiales)?
+                        <span class="purpose">
+                            Para identificar los desafíos técnicos de la migración y planificar las mitigaciones adecuadas.
+                        </span>
+                    </label>
+                    <textarea name="tec_1" rows="4" placeholder="Ej: Ancho de banda limitado en oficinas remotas (10 Mbps). Preferimos migrar fuera de horario laboral. Tenemos archivos de video grandes (hasta 5GB)..."></textarea>
+                </div>
+
+                <div class="question-card">
+                    <label class="question-label">
+                        ¿Es necesario mantener la estructura de permisos actual (NTFS) en SharePoint Online o se redefinirá la gestión de permisos?
+                        <span class="purpose">
+                            Para planificar la configuración de permisos (grupos, niveles de acceso) en SharePoint y asegurar una transición segura.
+                        </span>
+                    </label>
+                    <textarea name="tec_2" rows="4" placeholder="Ej: Queremos simplificar los permisos actuales. Hay demasiadas excepciones. Preferimos rediseñar con una estructura más clara por departamento..."></textarea>
+                </div>
+
+                <div class="question-card">
+                    <label class="question-label">
+                        ¿Existen integraciones técnicas o scripts vinculados al servidor de archivos que deban replicarse en SharePoint?
+                        <span class="purpose">
+                            Para detectar dependencias técnicas (macros, scripts de backup, unidades mapeadas) y reemplazarlas con soluciones equivalentes.
+                        </span>
+                    </label>
+                    <textarea name="tec_3" rows="4" placeholder="Ej: Tenemos scripts de PowerShell para backup automático y algunas macros de Excel que acceden a archivos en rutas de red específicas..."></textarea>
+                </div>
+
+                <div class="question-card">
+                    <label class="question-label">
+                        ¿Qué sistemas operativos y dispositivos utilizan los usuarios para acceder a los archivos?
+                        <span class="purpose">
+                            Para asegurar la compatibilidad y experiencia óptima tras la migración (uso del cliente de OneDrive en Windows/Mac, aplicaciones móviles).
+                        </span>
+                    </label>
+                    <textarea name="tec_4" rows="4" placeholder="Ej: Principalmente Windows 10/11 en PC de escritorio y laptops. Algunos ejecutivos usan MacBook. La mayoría tiene smartphones (iOS y Android)..."></textarea>
+                </div>
+
+                <div class="question-card">
+                    <label class="question-label">
+                        ¿Requieren migrar el historial de versiones de documentos o solo la versión más reciente de cada archivo?
+                        <span class="purpose">
+                            Para definir la estrategia de migración de versiones equilibrando la conservación del historial con la optimización del espacio.
+                        </span>
+                    </label>
+                    <textarea name="tec_5" rows="4" placeholder="Ej: Para documentos críticos (contratos, políticas) necesitamos el historial completo. Para otros archivos, solo la versión final es suficiente..."></textarea>
+                </div>
+            </div>
+
+            <div class="form-actions">
+                <button type="button" class="btn btn-outline" id="anteriorBtn">
+                    <i class="fas fa-arrow-left"></i> Anterior
+                </button>
+                <button type="button" class="btn btn-secondary" id="guardarBorradorBtn">
+                    <i class="fas fa-save"></i> Guardar Borrador
+                </button>
+                <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-arrow-right"></i> Guardar y Continuar
+                </button>
+            </div>
+        </form>
+        <footer class="footer">
+            <div class="footer-content">
+                <a href="https://unikal.tech" target="_blank" class="footer-logo" title="UNIKAL.TECH - IT Group">
+                    <img src="images/unikal-tech-logo.png" alt="UNIKAL.TECH Partners">
+                </a>
+                <div class="footer-text">
+                    Desarrollado por <a href="https://unikal.tech" target="_blank">UNIKAL TECH PARTNERS</a> © 2025
+                </div>
+                
+                <div class="footer-legal">
+                    <p class="footer-legal-text">
+                        Los datos personales recabados a través de este cuestionario serán tratados de conformidad con el 
+                        Reglamento (UE) 2016/679 (RGPD) y la Ley Orgánica 3/2018 (LOPDGDD). Los datos serán utilizados 
+                        exclusivamente para evaluar y planificar la migración a SharePoint Online y no serán cedidos a terceros 
+                        sin su consentimiento expreso. Puede ejercer sus derechos de acceso, rectificación, supresión, 
+                        limitación, portabilidad y oposición contactando con el responsable del tratamiento.
+                    </p>
+                    <div class="footer-links">
+                        <a href="https://unikal.tech/politica/" target="_blank">
+                            <i class="fas fa-shield-alt"></i> Política de Privacidad
+                        </a>
+                        <a href="https://unikal.tech/aviso-legal/" target="_blank">
+                            <i class="fas fa-gavel"></i> Aviso Legal
+                        </a>
+                        <a href="https://unikal.tech/politica-de-cookies/" target="_blank">
+                            <i class="fas fa-cookie-bite"></i> Política de Cookies
+                        </a>
+                        <a href="https://unikal.tech/#contacto" target="_blank">
+                            <i class="fas fa-envelope"></i> Contacto
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/seccion.js"></script>
+</body>
+</html>

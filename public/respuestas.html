@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Respuestas - Assessment Microsoft 365</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/respuestas.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <a href="https://unikal.tech" target="_blank" class="header-logo" title="UNIKAL.TECH">
+                <img src="images/unikal-tech-logo.png" alt="UNIKAL.TECH">
+            </a>
+            <div class="header-content">
+                <i class="fas fa-clipboard-list"></i>
+                <h1>Respuestas del Cuestionario</h1>
+                <p class="subtitle">Visualización de Cuestionarios Enviados</p>
+            </div>
+        </header>
+
+        <div style="padding: 20px 30px; background: white; border-bottom: 2px solid var(--gris);">
+            <div id="userInfo"></div>
+        </div>
+
+        <div class="toolbar">
+            <a href="index.html" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> Volver al Formulario
+            </a>
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchInput" placeholder="Buscar por empresa, contacto o email...">
+            </div>
+            <div style="margin-left: auto; display: flex; gap: 10px;">
+                <button onclick="exportarExcel()" class="btn btn-primary">
+                    <i class="fas fa-file-excel"></i> Exportar Excel
+                </button>
+                <button onclick="exportarCSV()" class="btn btn-secondary">
+                    <i class="fas fa-file-csv"></i> Exportar CSV
+                </button>
+                <button onclick="exportarJSON()" class="btn btn-outline">
+                    <i class="fas fa-file-code"></i> Exportar JSON
+                </button>
+            </div>
+        </div>
+
+        <div class="respuestas-container" id="respuestasContainer">
+            <div class="loading-wrapper">
+                <div class="loading-large"></div>
+                <p>Cargando respuestas...</p>
+            </div>
+        </div>
+
+        <div class="no-results" id="noResults" style="display: none;">
+            <i class="fas fa-inbox"></i>
+            <h3>No se encontraron respuestas</h3>
+            <p>Aún no hay cuestionarios enviados o no se encontraron resultados para la búsqueda.</p>
+            <a href="index.html" class="btn btn-primary">
+                <i class="fas fa-plus"></i> Crear Nuevo Cuestionario
+            </a>
+        </div>
+        <footer class="footer">
+            <div class="footer-content">
+                <a href="https://unikal.tech" target="_blank" class="footer-logo" title="UNIKAL.TECH - IT Group">
+                    <img src="images/unikal-tech-logo.png" alt="UNIKAL.TECH Partners">
+                </a>
+                <div class="footer-text">
+                    Desarrollado por <a href="https://unikal.tech" target="_blank">UNIKAL TECH PARTNERS</a> © 2025
+                </div>
+                
+                <div class="footer-legal">
+                    <p class="footer-legal-text">
+                        Los datos personales recabados a través de este cuestionario serán tratados de conformidad con el 
+                        Reglamento (UE) 2016/679 (RGPD) y la Ley Orgánica 3/2018 (LOPDGDD). Los datos serán utilizados 
+                        exclusivamente para evaluar y planificar la migración a SharePoint Online y no serán cedidos a terceros 
+                        sin su consentimiento expreso. Puede ejercer sus derechos de acceso, rectificación, supresión, 
+                        limitación, portabilidad y oposición contactando con el responsable del tratamiento.
+                    </p>
+                    <div class="footer-links">
+                        <a href="https://unikal.tech/politica/" target="_blank">
+                            <i class="fas fa-shield-alt"></i> Política de Privacidad
+                        </a>
+                        <a href="https://unikal.tech/aviso-legal/" target="_blank">
+                            <i class="fas fa-gavel"></i> Aviso Legal
+                        </a>
+                        <a href="https://unikal.tech/politica-de-cookies/" target="_blank">
+                            <i class="fas fa-cookie-bite"></i> Política de Cookies
+                        </a>
+                        <a href="https://unikal.tech/#contacto" target="_blank">
+                            <i class="fas fa-envelope"></i> Contacto
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/auth.js"></script>
+    <script src="js/respuestas.js"></script>
+</body>
+</html>

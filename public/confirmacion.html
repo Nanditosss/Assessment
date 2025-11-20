@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmación y Envío - Assessment Microsoft 365</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <a href="https://unikal.tech" target="_blank" class="header-logo" title="UNIKAL.TECH">
+                <img src="images/unikal-tech-logo.png" alt="UNIKAL.TECH">
+            </a>
+            <div class="header-content">
+                <i class="fas fa-check-double"></i>
+                <h1>Revisión y Confirmación</h1>
+                <p class="subtitle">Verifique su información antes de enviar</p>
+            </div>
+        </header>
+
+        <div class="welcome-container">
+            <div class="welcome-hero">
+                <h2>¡Excelente trabajo!</h2>
+                <p>Ha completado todas las secciones del cuestionario. Por favor, revise el resumen a continuación antes de enviar.</p>
+            </div>
+
+            <div id="resumenContainer" class="alert alert-info">
+                <i class="fas fa-info-circle"></i>
+                <div>
+                    <strong>Cargando resumen...</strong>
+                </div>
+            </div>
+
+            <div class="alert alert-warning">
+                <i class="fas fa-exclamation-triangle"></i>
+                <div>
+                    <strong>Importante:</strong> Una vez enviado el cuestionario, no podrá modificar las respuestas. 
+                    Si necesita hacer cambios, use los botones de navegación para volver a las secciones correspondientes.
+                </div>
+            </div>
+
+            <div class="sections-grid" style="margin-top: 40px;">
+                <a href="seccion1.html" class="section-card">
+                    <div class="section-card-header">
+                        <div class="section-card-number">1</div>
+                        <h3>Inicio e Inventario</h3>
+                    </div>
+                    <div class="section-card-body">
+                        <p id="resumen-s1">Cargando...</p>
+                    </div>
+                </a>
+
+                <a href="seccion2.html" class="section-card">
+                    <div class="section-card-header">
+                        <div class="section-card-number">2</div>
+                        <h3>Usuarios y Requisitos</h3>
+                    </div>
+                    <div class="section-card-body">
+                        <p id="resumen-s2">Cargando...</p>
+                    </div>
+                </a>
+
+                <a href="seccion3.html" class="section-card">
+                    <div class="section-card-header">
+                        <div class="section-card-number">3</div>
+                        <h3>Gobernanza y Adopción</h3>
+                    </div>
+                    <div class="section-card-body">
+                        <p id="resumen-s3">Cargando...</p>
+                    </div>
+                </a>
+
+                <a href="seccion4.html" class="section-card">
+                    <div class="section-card-header">
+                        <div class="section-card-number">4</div>
+                        <h3>IA y Automatización</h3>
+                    </div>
+                    <div class="section-card-body">
+                        <p id="resumen-s4">Cargando...</p>
+                    </div>
+                </a>
+
+                <a href="seccion5.html" class="section-card">
+                    <div class="section-card-header">
+                        <div class="section-card-number">5</div>
+                        <h3>Cultura y Seguridad</h3>
+                    </div>
+                    <div class="section-card-body">
+                        <p id="resumen-s5">Cargando...</p>
+                    </div>
+                </a>
+
+                <a href="seccion6.html" class="section-card">
+                    <div class="section-card-header">
+                        <div class="section-card-number">6</div>
+                        <h3>Integraciones y Experiencia</h3>
+                    </div>
+                    <div class="section-card-body">
+                        <p id="resumen-s6">Cargando...</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="form-actions" style="margin-top: 50px; justify-content: center;">
+                <a href="seccion6.html" class="btn btn-outline">
+                    <i class="fas fa-arrow-left"></i> Volver a la Última Sección
+                </a>
+                <button type="button" class="btn btn-primary" id="enviarFinalBtn">
+                    <i class="fas fa-paper-plane"></i> Enviar Cuestionario
+                </button>
+            </div>
+        </div>
+
+        <div id="mensajeExito" class="mensaje-exito" style="display: none;">
+            <i class="fas fa-check-circle"></i>
+            <h3>¡Cuestionario enviado con éxito!</h3>
+            <p>Gracias por completar el cuestionario de migración a SharePoint Online. Su información ha sido guardada correctamente.</p>
+            <a href="index.html" class="btn btn-primary">
+                <i class="fas fa-home"></i> Volver al Inicio
+            </a>
+            <a href="respuestas.html" class="btn btn-secondary">
+                <i class="fas fa-list"></i> Ver Mis Respuestas
+            </a>
+        </div>
+        <footer class="footer">
+            <div class="footer-content">
+                <a href="https://unikal.tech" target="_blank" class="footer-logo" title="UNIKAL.TECH - IT Group">
+                    <img src="images/unikal-tech-logo.png" alt="UNIKAL.TECH Partners">
+                </a>
+                <div class="footer-text">
+                    Desarrollado por <a href="https://unikal.tech" target="_blank">UNIKAL TECH PARTNERS</a> © 2025
+                </div>
+                
+                <div class="footer-legal">
+                    <p class="footer-legal-text">
+                        Los datos personales recabados a través de este cuestionario serán tratados de conformidad con el 
+                        Reglamento (UE) 2016/679 (RGPD) y la Ley Orgánica 3/2018 (LOPDGDD). Los datos serán utilizados 
+                        exclusivamente para evaluar y planificar la migración a SharePoint Online y no serán cedidos a terceros 
+                        sin su consentimiento expreso. Puede ejercer sus derechos de acceso, rectificación, supresión, 
+                        limitación, portabilidad y oposición contactando con el responsable del tratamiento.
+                    </p>
+                    <div class="footer-links">
+                        <a href="https://unikal.tech/politica/" target="_blank">
+                            <i class="fas fa-shield-alt"></i> Política de Privacidad
+                        </a>
+                        <a href="https://unikal.tech/aviso-legal/" target="_blank">
+                            <i class="fas fa-gavel"></i> Aviso Legal
+                        </a>
+                        <a href="https://unikal.tech/politica-de-cookies/" target="_blank">
+                            <i class="fas fa-cookie-bite"></i> Política de Cookies
+                        </a>
+                        <a href="https://unikal.tech/#contacto" target="_blank">
+                            <i class="fas fa-envelope"></i> Contacto
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/auth.js"></script>
+    <script src="js/confirmacion.js"></script>
+</body>
+</html>

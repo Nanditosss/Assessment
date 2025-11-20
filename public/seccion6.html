@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sección 6: Integraciones y Experiencia - Assessment Microsoft 365</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <a href="https://unikal.tech" target="_blank" class="header-logo" title="UNIKAL.TECH">
+                <img src="images/unikal-tech-logo.png" alt="UNIKAL.TECH">
+            </a>
+            <div class="header-content">
+                <i class="fas fa-plug"></i>
+                <h1>Sección 6: Integraciones y Experiencia</h1>
+                <p class="subtitle">Sistemas Core, UX y Gobernanza Moderna</p>
+            </div>
+        </header>
+
+        <div class="navigation-steps">
+            <div class="step completed"><div class="step-number">1</div><div class="step-label">Inicio</div></div>
+            <div class="step completed"><div class="step-number">2</div><div class="step-label">Usuarios</div></div>
+            <div class="step completed"><div class="step-number">3</div><div class="step-label">Gobernanza</div></div>
+            <div class="step completed"><div class="step-number">4</div><div class="step-label">IA</div></div>
+            <div class="step completed"><div class="step-number">5</div><div class="step-label">Seguridad</div></div>
+            <div class="step active"><div class="step-number">6</div><div class="step-label">Final</div></div>
+        </div>
+
+        <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+        <div class="progress-text" id="progressText">0% completado</div>
+
+        <form>
+            <div class="section">
+                <h2 class="section-title"><i class="fas fa-server"></i> Integraciones con Sistemas Core del Negocio</h2>
+                <div class="section-description">La integración con sistemas empresariales es clave para maximizar el valor de SharePoint.</div>
+
+                <div class="question-card">
+                    <label class="question-label">
+                        ¿Qué sistemas empresariales clave (ERP, CRM, gestión de proyectos) interactúan con los archivos del servidor?
+                        <span class="purpose">Para identificar interdependencias y planificar integraciones en SharePoint.</span>
+                    </label>
+                    <textarea name="int_1" rows="4" placeholder="Ej: Usamos SAP como ERP, Salesforce como CRM, y Microsoft Project para gestión de proyectos. Todos generan documentos (cotizaciones, contratos, informes) que actualmente se guardan en carpetas de red..."></textarea>
+                </div>
+
+                <div class="question-card">
+                    <label class="question-label">
+                        ¿Necesitan que SharePoint Online se integre con esos sistemas? (ej., vincular documentos a registros de ERP/CRM)
+                        <span class="purpose">Para determinar los requisitos de integración.</span>
+                    </label>
+                    <textarea name="int_2" rows="4" placeholder="Ej: Sí, sería ideal vincular contratos en SharePoint con oportunidades en Salesforce, y documentos de proyectos con tareas en Project. También querríamos adjuntar documentos de SharePoint directamente en transacciones de SAP..."></textarea>
+                </div>
+
+                <div class="question-card">
+                    <label class="question-label">
+                        ¿Cómo gestionan actualmente el intercambio de información entre el servidor de archivos y las aplicaciones de negocio?
+                        <span class="purpose">Para comprender los flujos existentes y replicarlos o mejorarlos con SharePoint.</span>
+                    </label>
+                    <textarea name="int_3" rows="4" placeholder="Ej: Actualmente es manual. Los usuarios exportan datos del ERP a Excel y los guardan en carpetas compartidas. Para CRM, adjuntan archivos uno por uno. Es tedioso y genera duplicados..."></textarea>
+                </div>
+
+                <div class="question-card">
+                    <label class="question-label">
+                        ¿Existen oportunidades para optimizar procesos al combinar SharePoint con estos sistemas?
+                        <span class="purpose">Para descubrir posibilidades de transformación digital.</span>
+                    </label>
+                    <textarea name="int_4" rows="4" placeholder="Ej: Sí, varias. Automatizar la generación de informes del ERP directo en SharePoint con Power Automate. Sincronizar automáticamente contratos firmados de SharePoint a registros de CRM. Crear plantillas de documentos con datos del sistema..."></textarea>
+                </div>
+
+                <div class="question-card">
+                    <label class="question-label">
+                        ¿Qué tipo de acceso a datos de sistemas core necesitarán los usuarios a través de SharePoint o Teams?
+                        <span class="purpose">Para diseñar la experiencia de usuario considerando la visualización de datos externos.</span>
+                    </label>
+                    <textarea name="int_5" rows="4" placeholder="Ej: Necesitan ver dashboards del ERP (ventas, inventarios) desde Teams sin salir de la aplicación. También acceder a información de clientes del CRM cuando trabajan en propuestas en SharePoint..."></textarea>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title"><i class="fas fa-handshake"></i> Experiencia del Usuario y Colaboración</h2>
+                <div class="section-description">Una excelente experiencia de usuario es fundamental para la adopción exitosa de SharePoint.</div>
+
+                <div class="question-card">
+                    <label class="question-label">
+                        ¿Cómo espera la organización que los empleados accedan a los documentos? (vía web, sincronización en PC, dispositivos móviles)
+                        <span class="purpose">Para asegurar que la solución soporte las modalidades de trabajo requeridas.</span>
+                    </label>
+                    <textarea name="exp_1" rows="4" placeholder="Ej: Principalmente vía web desde PC de escritorio en la oficina. Los ejecutivos necesitan acceso móvil. Algunos equipos remotos necesitan sincronización con OneDrive para trabajar offline..."></textarea>
+                </div>
+
+                <div class="question-card">
+                    <label class="question-label">
+                        ¿Utilizarán Microsoft Teams u otras herramientas de Microsoft 365 para colaborar en los documentos migrados?
+                        <span class="purpose">Para determinar cómo integrar SharePoint con Teams u otras aplicaciones.</span>
+                    </label>
+                    <textarea name="exp_2" rows="4" placeholder="Ej: Sí, Teams es nuestra herramienta principal de comunicación. Queremos que las bibliotecas de SharePoint estén integradas como pestañas en los canales de Teams para colaboración en tiempo real sin cambiar de aplicación..."></textarea>
+                </div>
+
+                <div class="question-card">
+                    <label class="question-label">
+                        ¿Hay consideraciones de accesibilidad o necesidades especiales entre los usuarios que deban contemplarse?
+                        <span class="purpose">Para garantizar que la plataforma ofrezca una experiencia de uso inclusiva.</span>
+                    </label>
+                    <textarea name="exp_3" rows="4" placeholder="Ej: Tenemos 2 empleados con discapacidad visual que usan lectores de pantalla. Necesitamos asegurar que la interfaz sea compatible con JAWS/NVDA y que los documentos tengan texto alternativo en imágenes..."></textarea>
+                </div>
+
+                <div class="question-card">
+                    <label class="question-label">
+                        ¿Qué mejoras esperan los usuarios en la búsqueda y localización de información con SharePoint Online?
+                        <span class="purpose">Para identificar problemas actuales de búsqueda y aprovechar las capacidades de SharePoint.</span>
+                    </label>
+                    <textarea name="exp_4" rows="4" placeholder="Ej: Actualmente la búsqueda en el servidor de archivos solo busca por nombre de archivo. Queremos búsqueda de contenido dentro de documentos, filtros por metadata, sugerencias inteligentes, y resultados relevantes por persona..."></textarea>
+                </div>
+
+                <div class="question-card">
+                    <label class="question-label">
+                        ¿Cómo facilitarán la colaboración segura con clientes o socios externos en la nueva plataforma?
+                        <span class="purpose">Para planificar el uso de funciones de uso compartido externo.</span>
+                    </label>
+                    <textarea name="exp_5" rows="4" placeholder="Ej: Usaremos enlaces seguros con caducidad y contraseñas para envíos puntuales. Para colaboración continua con proveedores estratégicos, crearemos cuentas de invitado en Azure AD con acceso limitado a carpetas específicas..."></textarea>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title"><i class="fas fa-gavel"></i> Gobernanza Moderna</h2>
+                <div class="section-description">Microsoft Purview y las herramientas modernas de gobernanza son esenciales para el control de datos.</div>
+
+                <div class="question-card">
+                    <label class="question-label">
+                        ¿Cómo planean utilizar Microsoft Purview y sus herramientas para mantener la visibilidad y control sobre los datos?
+                        <span class="purpose">Para asegurar que se aprovechen las capacidades modernas de gobernanza.</span>
+                    </label>
+                    <textarea name="gom_1" rows="4" placeholder="Ej: Queremos usar el catálogo de datos de Purview para entender qué información sensible tenemos. También necesitamos eDiscovery para cumplir con auditorías legales, y activity explorer para monitorear accesos a documentos confidenciales..."></textarea>
+                </div>
+
+                <div class="question-card">
+                    <label class="question-label">
+                        ¿Existe un esquema de clasificación de la información a nivel corporativo? (ej., niveles de confidencialidad)
+                        <span class="purpose">Para unificar la estrategia de clasificación de datos de la organización.</span>
+                    </label>
+                    <textarea name="gom_2" rows="4" placeholder="Ej: Tenemos 4 niveles: Público, Interno, Confidencial, y Estrictamente Confidencial. Actualmente no están bien aplicados. Queremos implementar etiquetas de sensibilidad que apliquen automáticamente cifrado y restricciones según el nivel..."></textarea>
+                </div>
+
+                <div class="question-card">
+                    <label class="question-label">
+                        ¿Qué políticas establecerán para la creación, nomenclatura y ciclo de vida de sitios y grupos de Microsoft 365?
+                        <span class="purpose">Para mantener orden y coherencia en el entorno.</span>
+                    </label>
+                    <textarea name="gom_3" rows="4" placeholder="Ej: Nomenclatura obligatoria: [Departamento]-[Proyecto/Tema]-Año (Ej: Marketing-CampanaNavidad-2025). Solo jefes de departamento pueden solicitar nuevos sitios mediante formulario. Sitios inactivos por 6 meses se archivarán automáticamente..."></textarea>
+                </div>
+
+                <div class="question-card">
+                    <label class="question-label">
+                        ¿Cómo se asegurará el alineamiento continuo con normativas internas y externas?
+                        <span class="purpose">Para planificar un proceso de gobernanza continua.</span>
+                    </label>
+                    <textarea name="gom_4" rows="4" placeholder="Ej: Revisión trimestral por el comité de gobernanza (IT + Legal + Cumplimiento). Auditorías anuales externas. Actualización de políticas cuando cambien leyes (RGPD, LOPDGDD). Alertas automáticas si se detectan incumplimientos..."></textarea>
+                </div>
+
+                <div class="question-card">
+                    <label class="question-label">
+                        ¿Quién será el responsable de la gobernanza y cómo se comunicarán las políticas a los usuarios?
+                        <span class="purpose">Para definir un modelo de gobierno con responsables claros.</span>
+                    </label>
+                    <textarea name="gom_5" rows="4" placeholder="Ej: El CIO será el responsable principal con un comité de gobernanza (Legal, IT, Seguridad). Comunicación mediante intranet, emails trimestrales, sesiones de formación obligatorias, y guías rápidas accesibles desde SharePoint..."></textarea>
+                </div>
+            </div>
+
+            <div class="form-actions">
+                <button type="button" class="btn btn-outline" id="anteriorBtn"><i class="fas fa-arrow-left"></i> Anterior</button>
+                <button type="button" class="btn btn-secondary" id="guardarBorradorBtn"><i class="fas fa-save"></i> Guardar Borrador</button>
+                <button type="submit" class="btn btn-primary"><i class="fas fa-check-circle"></i> Revisar y Enviar</button>
+            </div>
+        </form>
+        <footer class="footer">
+            <div class="footer-content">
+                <a href="https://unikal.tech" target="_blank" class="footer-logo" title="UNIKAL.TECH - IT Group">
+                    <img src="images/unikal-tech-logo.png" alt="UNIKAL.TECH Partners">
+                </a>
+                <div class="footer-text">
+                    Desarrollado por <a href="https://unikal.tech" target="_blank">UNIKAL TECH PARTNERS</a> © 2025
+                </div>
+                
+                <div class="footer-legal">
+                    <p class="footer-legal-text">
+                        Los datos personales recabados a través de este cuestionario serán tratados de conformidad con el 
+                        Reglamento (UE) 2016/679 (RGPD) y la Ley Orgánica 3/2018 (LOPDGDD). Los datos serán utilizados 
+                        exclusivamente para evaluar y planificar la migración a SharePoint Online y no serán cedidos a terceros 
+                        sin su consentimiento expreso. Puede ejercer sus derechos de acceso, rectificación, supresión, 
+                        limitación, portabilidad y oposición contactando con el responsable del tratamiento.
+                    </p>
+                    <div class="footer-links">
+                        <a href="https://unikal.tech/politica/" target="_blank">
+                            <i class="fas fa-shield-alt"></i> Política de Privacidad
+                        </a>
+                        <a href="https://unikal.tech/aviso-legal/" target="_blank">
+                            <i class="fas fa-gavel"></i> Aviso Legal
+                        </a>
+                        <a href="https://unikal.tech/politica-de-cookies/" target="_blank">
+                            <i class="fas fa-cookie-bite"></i> Política de Cookies
+                        </a>
+                        <a href="https://unikal.tech/#contacto" target="_blank">
+                            <i class="fas fa-envelope"></i> Contacto
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/seccion.js"></script>
+</body>
+</html>

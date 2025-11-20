@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test: Navegación Sección 3 → 4</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        #test-panel {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            width: 400px;
+            max-height: 90vh;
+            overflow-y: auto;
+            background: #000;
+            color: #0f0;
+            padding: 15px;
+            font-family: monospace;
+            font-size: 11px;
+            z-index: 99999;
+            border: 2px solid #0f0;
+        }
+        .log { margin: 5px 0; padding: 3px; border-left: 3px solid #0f0; }
+        .log-success { border-color: #0f0; background: rgba(0,255,0,0.1); }
+        .log-error { border-color: #f00; background: rgba(255,0,0,0.1); color: #f00; }
+        .log-warning { border-color: #ff0; background: rgba(255,255,0,0.1); color: #ff0; }
+        .log-info { border-color: #0ff; background: rgba(0,255,255,0.1); color: #0ff; }
+        
+        #test-controls {
+            margin: 10px 0;
+            padding: 10px;
+            background: #222;
+            border: 1px solid #0f0;
+        }
+        
+        #test-controls button {
+            margin: 5px;
+            padding: 8px 15px;
+            background: #0f0;
+            color: #000;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        
+        #test-controls button:hover {
+            background: #0ff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <h1>🧪 TEST: Sección 3 → Sección 4</h1>
+                <p class="subtitle">Diagnóstico de Navegación</p>
+            </div>
+        </header>
+
+        <div class="navigation-steps">
+            <div class="step completed"><div class="step-number">1</div></div>
+            <div class="step completed"><div class="step-number">2</div></div>
+            <div class="step active"><div class="step-number">3</div></div>
+            <div class="step"><div class="step-number">4</div></div>
+            <div class="step"><div class="step-number">5</div></div>
+            <div class="step"><div class="step-number">6</div></div>
+        </div>
+
+        <form>
+            <div class="section">
+                <h2>Simular Sección 3</h2>
+                <div class="form-group">
+                    <label>Campo de prueba:</label>
+                    <textarea name="gob_1" rows="3">Datos de prueba para sección 3</textarea>
+                </div>
+            </div>
+
+            <div class="form-actions">
+                <button type="button" class="btn btn-outline" id="btnAnterior">
+                    🔙 Anterior (→ Sección 2)
+                </button>
+                <button type="button" class="btn btn-secondary" id="btnGuardar">
+                    💾 Guardar Borrador
+                </button>
+                <button type="submit" class="btn btn-primary" id="btnContinuar">
+                    ✅ Guardar y Continuar (→ Sección 4)
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <div id="test-panel">
+        <h3 style="color: #0ff; margin: 0 0 10px 0;">🧪 TEST PANEL</h3>
+        
+        <div id="test-controls">
+            <button onclick="testGetCurrentSection()">Test getCurrentSection()</button>
+            <button onclick="testLocalStorage()">Test localStorage</button>
+            <button onclick="clearLogs()">Limpiar Logs</button>
+        </div>
+        
+        <div id="test-log"></div>
+    </div>
+
+    <script>
+        const logContainer = document.getElementById('test-log');
+        let logCount = 0;
+        
+        function addLog(msg, type = 'info') {
+            logCount++;
+            const div = document.createElement('div');
+            div.className = `log log-${type}`;
+            div.textContent = `[${logCount}] ${msg}`;
+            logContainer.appendChild(div);
+            logContainer.scrollTop = logContainer.scrollHeight;
+            console.log(`[${type}] ${msg}`);
+        }
+        
+        function clearLogs() {
+            logContainer.innerHTML = '';
+            logCount = 0;
+        }
+        
+        function getCurrentSection() {
+            // Simular que estamos en seccion3.html
+            const fakePath = '/seccion3.html';
+            const match = fakePath.match(/seccion(\d+)\.html/);
+            return match ? parseInt(match[1]) : 1;
+        }
+        
+        function testGetCurrentSection() {
+            addLog('=== TEST: getCurrentSection() ===', 'info');
+            const result = getCurrentSection();
+            addLog(`Resultado: ${result}`, 'success');
+            addLog(`Tipo: ${typeof result}`, 'info');
+            addLog(`Es 3?: ${result === 3}`, result === 3 ? 'success' : 'error');
+        }
+        
+        function testLocalStorage() {
+            addLog('=== TEST: localStorage ===', 'info');
+            try {
+                const testData = {test: 'valor', numero: 123};
+                const testKey = 'test_key';
+                
+                localStorage.setItem(testKey, JSON.stringify(testData));
+                addLog('✓ Datos guardados', 'success');
+                
+                const retrieved = localStorage.getItem(testKey);
+                addLog(`✓ Datos recuperados: ${retrieved}`, 'success');
+                
+                const parsed = JSON.parse(retrieved);
+                addLog(`✓ JSON parseado correctamente`, 'success');
+                
+                localStorage.removeItem(testKey);
+                addLog('✓ Datos eliminados', 'success');
+                
+                addLog('✅ localStorage funciona correctamente', 'success');
+            } catch (e) {
+                addLog(`❌ Error: ${e.message}`, 'error');
+            }
+        }
+        
+        // Simular guardado
+        function guardarBorrador() {
+            addLog('💾 guardarBorrador() ejecutado', 'info');
+            
+            const seccion = getCurrentSection();
+            addLog(`💾 Sección actual: ${seccion}`, 'info');
+            
+            const form = document.querySelector('form');
+            const formData = new FormData(form);
+            const respuestas = {};
+            
+            for (let [key, value] of formData.entries()) {
+                respuestas[key] = value;
+                addLog(`💾 Campo: ${key} = "${value}"`, 'info');
+            }
+            
+            const key = `borrador_seccion${seccion}`;
+            const jsonString = JSON.stringify(respuestas);
+            
+            try {
+                localStorage.setItem(key, jsonString);
+                addLog(`💾 ✅ Guardado en localStorage: ${key}`, 'success');
+                addLog(`💾 Tamaño: ${jsonString.length} bytes`, 'info');
+                
+                // Verificar
+                const check = localStorage.getItem(key);
+                if (check === jsonString) {
+                    addLog(`💾 ✅ VERIFICACIÓN OK`, 'success');
+                    return true;
+                } else {
+                    addLog(`💾 ❌ VERIFICACIÓN FALLÓ`, 'error');
+                    return false;
+                }
+            } catch (e) {
+                addLog(`💾 ❌ Error: ${e.message}`, 'error');
+                return false;
+            }
+        }
+        
+        // Simular navegación
+        function guardarYContinuar(event) {
+            event.preventDefault();
+            
+            addLog('=== ✅ GUARDAR Y CONTINUAR ===', 'success');
+            
+            const currentSection = getCurrentSection();
+            addLog(`✅ Sección actual: ${currentSection}`, 'info');
+            addLog(`✅ Tipo: ${typeof currentSection}`, 'info');
+            
+            if (guardarBorrador()) {
+                addLog(`✅ Guardado exitoso`, 'success');
+                
+                const nextSection = currentSection + 1;
+                const nextUrl = `seccion${nextSection}.html`;
+                
+                addLog(`✅ Calculado: nextSection = ${nextSection}`, 'info');
+                addLog(`✅ URL destino: ${nextUrl}`, 'info');
+                addLog(`✅ Debería navegar a: SECCIÓN 4`, 'success');
+                
+                addLog(`⏱️ Esperando 1 segundo...`, 'warning');
+                
+                setTimeout(() => {
+                    addLog(`🚀 window.location.replace("${nextUrl}")`, 'success');
+                    addLog(`✅✅✅ NAVEGACIÓN SIMULADA EXITOSA ✅✅✅`, 'success');
+                    alert(`✅ CORRECTO: Navegaría a ${nextUrl}\n\nSección actual: ${currentSection}\nSección siguiente: ${nextSection}`);
+                }, 1000);
+            } else {
+                addLog(`❌ Error al guardar`, 'error');
+            }
+        }
+        
+        function seccionAnterior() {
+            addLog('=== 🔙 ANTERIOR ===', 'warning');
+            
+            const currentSection = getCurrentSection();
+            addLog(`🔙 Sección actual: ${currentSection}`, 'info');
+            
+            if (guardarBorrador()) {
+                const prevSection = currentSection - 1;
+                const prevUrl = `seccion${prevSection}.html`;
+                
+                addLog(`🔙 URL destino: ${prevUrl}`, 'warning');
+                addLog(`🔙 Debería navegar a: SECCIÓN 2`, 'warning');
+                
+                alert(`🔙 ANTERIOR: Navegaría a ${prevUrl}\n\nSección actual: ${currentSection}\nSección anterior: ${prevSection}`);
+            }
+        }
+        
+        // Event listeners
+        document.addEventListener('DOMContentLoaded', () => {
+            addLog('=== PÁGINA CARGADA ===', 'success');
+            addLog('URL simulada: /seccion3.html', 'info');
+            addLog('Sección detectada: 3', 'info');
+            addLog('', 'info');
+            addLog('INSTRUCCIONES:', 'info');
+            addLog('1. Click "Guardar y Continuar" → debe ir a sección 4', 'info');
+            addLog('2. Click "Anterior" → debe ir a sección 2', 'info');
+            addLog('3. Observa los logs detallados', 'info');
+            
+            document.querySelector('form').addEventListener('submit', guardarYContinuar);
+            document.getElementById('btnAnterior').addEventListener('click', seccionAnterior);
+            document.getElementById('btnGuardar').addEventListener('click', () => {
+                addLog('=== 💾 GUARDAR BORRADOR ===', 'info');
+                guardarBorrador();
+            });
+        });
+    </script>
+</body>
+</html>

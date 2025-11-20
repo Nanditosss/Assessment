@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Sección 3 - Debug Navegación</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        #debug-overlay {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            width: 350px;
+            max-height: 90vh;
+            overflow-y: auto;
+            background: rgba(0, 0, 0, 0.9);
+            color: #0f0;
+            padding: 15px;
+            font-family: 'Courier New', monospace;
+            font-size: 11px;
+            z-index: 99999;
+            border: 2px solid #0f0;
+            border-radius: 5px;
+        }
+        #debug-overlay h3 {
+            color: #0ff;
+            margin: 0 0 10px 0;
+        }
+        .log-entry {
+            padding: 3px 5px;
+            margin: 2px 0;
+            border-left: 3px solid #0f0;
+            background: rgba(0, 255, 0, 0.1);
+        }
+        .log-submit { border-left-color: #00ff00; background: rgba(0, 255, 0, 0.2); }
+        .log-anterior { border-left-color: #ff9900; background: rgba(255, 153, 0, 0.2); }
+        .log-step { border-left-color: #0099ff; background: rgba(0, 153, 255, 0.2); }
+        .log-error { border-left-color: #ff0000; background: rgba(255, 0, 0, 0.2); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <h1>TEST: Sección 3</h1>
+                <p class="subtitle">Debug de Navegación</p>
+            </div>
+        </header>
+
+        <div class="navigation-steps">
+            <div class="step completed"><div class="step-number">1</div><div class="step-label">Inicio</div></div>
+            <div class="step completed"><div class="step-number">2</div><div class="step-label">Usuarios</div></div>
+            <div class="step active"><div class="step-number">3</div><div class="step-label">Gobernanza</div></div>
+            <div class="step"><div class="step-number">4</div><div class="step-label">IA</div></div>
+            <div class="step"><div class="step-number">5</div><div class="step-label">Seguridad</div></div>
+            <div class="step"><div class="step-number">6</div><div class="step-label">Final</div></div>
+        </div>
+
+        <form>
+            <div class="section">
+                <h2 class="section-title">Preguntas de Prueba</h2>
+                <div class="question-card">
+                    <label class="question-label">Pregunta 1</label>
+                    <textarea name="gob_1" rows="4"></textarea>
+                </div>
+            </div>
+
+            <div class="form-actions">
+                <button type="button" class="btn btn-outline" id="anteriorBtn">
+                    <i class="fas fa-arrow-left"></i> Anterior
+                </button>
+                <button type="button" class="btn btn-secondary" id="guardarBorradorBtn">
+                    <i class="fas fa-save"></i> Guardar Borrador
+                </button>
+                <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-arrow-right"></i> Guardar y Continuar
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <div id="debug-overlay">
+        <h3>🐛 DEBUG LOG</h3>
+        <div id="debug-log"></div>
+    </div>
+
+    <script>
+        const debugLog = document.getElementById('debug-log');
+        let logCount = 0;
+        
+        function addLog(msg, type = 'info') {
+            logCount++;
+            const entry = document.createElement('div');
+            entry.className = `log-entry log-${type}`;
+            entry.textContent = `[${logCount}] ${msg}`;
+            debugLog.appendChild(entry);
+            debugLog.scrollTop = debugLog.scrollHeight;
+            console.log(`[${type.toUpperCase()}] ${msg}`);
+        }
+
+        function getCurrentSection() {
+            // Simular que estamos en sección 3
+            return 3;
+        }
+
+        addLog('Página cargada: seccion3.html', 'info');
+        addLog('getCurrentSection() = 3', 'info');
+
+        // Evento del formulario (submit)
+        const form = document.querySelector('form');
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            addLog('🟢 SUBMIT del formulario capturado', 'submit');
+            addLog('✅ GUARDAR Y CONTINUAR ejecutado', 'submit');
+            
+            const currentSection = getCurrentSection();
+            addLog(`Sección actual: ${currentSection}`, 'submit');
+            
+            if (currentSection < 6) {
+                const nextSection = currentSection + 1;
+                addLog(`Navegando a: seccion${nextSection}.html`, 'submit');
+                addLog(`⏱️ Esperando 1 segundo...`, 'submit');
+                
+                setTimeout(() => {
+                    addLog(`🚀 NAVEGACIÓN A: seccion${nextSection}.html`, 'submit');
+                    alert(`ÉXITO: Navegaría a seccion${nextSection}.html\n(seccion4.html desde sección 3)`);
+                }, 1000);
+            }
+        });
+
+        // Evento del botón Anterior
+        const btnAnterior = document.getElementById('anteriorBtn');
+        btnAnterior.addEventListener('click', function(e) {
+            e.preventDefault();
+            addLog('🔙 BOTÓN ANTERIOR clickeado', 'anterior');
+            
+            const currentSection = getCurrentSection();
+            addLog(`Retrocediendo desde: ${currentSection}`, 'anterior');
+            
+            if (currentSection > 1) {
+                const prevSection = currentSection - 1;
+                addLog(`Navegando a: seccion${prevSection}.html`, 'anterior');
+                alert(`ANTERIOR: Navegaría a seccion${prevSection}.html\n(seccion2.html desde sección 3)`);
+            }
+        });
+
+        // Eventos de los steps
+        const steps = document.querySelectorAll('.step');
+        addLog(`Configurando ${steps.length} steps`, 'info');
+        
+        steps.forEach((step, index) => {
+            step.addEventListener('click', function(e) {
+                const targetSection = index + 1;
+                const currentSection = getCurrentSection();
+                
+                addLog(`🔢 STEP ${targetSection} clickeado`, 'step');
+                addLog(`Current: ${currentSection}, Target: ${targetSection}`, 'step');
+                
+                if (targetSection !== currentSection) {
+                    addLog(`Navegando a: seccion${targetSection}.html`, 'step');
+                    alert(`STEP: Navegaría a seccion${targetSection}.html`);
+                } else {
+                    addLog(`Ya estás en sección ${targetSection}`, 'step');
+                }
+            });
+        });
+
+        addLog('=== INICIALIZACIÓN COMPLETA ===', 'info');
+        addLog('', 'info');
+        addLog('INSTRUCCIONES:', 'info');
+        addLog('1. Click en "Guardar y Continuar" → debe ir a sección 4', 'info');
+        addLog('2. Click en "Anterior" → debe ir a sección 2', 'info');
+        addLog('3. Click en steps → va a la sección correspondiente', 'info');
+    </script>
+</body>
+</html>

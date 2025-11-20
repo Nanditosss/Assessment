@@ -1,0 +1,22 @@
+{
+  "name": "webapp",
+  "version": "1.0.0",
+  "description": "Assessment Microsoft 365 - Aplicación web interactiva",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "pm2 start ecosystem.config.cjs",
+    "stop": "pm2 stop assessment-m365",
+    "restart": "pm2 restart assessment-m365",
+    "logs": "pm2 logs assessment-m365 --nostream",
+    "test": "curl http://localhost:3000"
+  },
+  "keywords": ["assessment", "microsoft365", "sharepoint"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@hono/node-server": "^1.19.6",
+    "hono": "^4.10.6"
+  }
+}
