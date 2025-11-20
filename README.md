@@ -2,10 +2,9 @@
 
 ## 🌐 URLs de Producción
 
-- **Cloudflare Pages:** https://assessment-m365-v2.pages.dev
-- **Último despliegue:** https://d11b3d6a.assessment-m365-v2.pages.dev
+- **Cloudflare Pages:** https://assessment-microsoft-unikaltech.pages.dev
+- **Último despliegue:** https://beb3d485.assessment-microsoft-unikaltech.pages.dev
 - **GitHub:** https://github.com/Nanditosss/Assessment
-- **Sandbox:** https://3000-ium0dwz6mty78z96fpv3x-82b888ba.sandbox.novita.ai
 
 ### 🔧 Notas Técnicas
 - **Cloudflare Pages** sirve URLs sin extensión `.html` (ej: `/seccion3` en lugar de `/seccion3.html`)
