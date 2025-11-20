@@ -3,12 +3,37 @@
 ## 🌐 URLs de Producción
 
 - **Cloudflare Pages:** https://assessment-microsoft-unikaltech.pages.dev
-- **Último despliegue:** https://beb3d485.assessment-microsoft-unikaltech.pages.dev
+- **Último despliegue:** https://a751ff22.assessment-microsoft-unikaltech.pages.dev
 - **GitHub:** https://github.com/Nanditosss/Assessment
+
+### 🗄️ Base de Datos y API
+- **Base de datos:** Cloudflare D1 (SQLite distribuido globalmente)
+- **API Endpoint:** `/api/tables/respuestas_sharepoint`
+- **Tabla:** `respuestas_sharepoint`
+
+### 📡 API Endpoints Disponibles
+
+```bash
+# Crear nueva respuesta
+POST /api/tables/respuestas_sharepoint
+Content-Type: application/json
+Body: { id, fecha_envio, empresa, contacto, email, respuestas, completado }
+
+# Listar respuestas (admin)
+GET /api/tables/respuestas_sharepoint?admin=true
+
+# Listar respuestas por email (usuario)
+GET /api/tables/respuestas_sharepoint?email=usuario@ejemplo.com
+
+# Eliminar respuesta
+DELETE /api/tables/respuestas_sharepoint/{id}
+```
 
 ### 🔧 Notas Técnicas
 - **Cloudflare Pages** sirve URLs sin extensión `.html` (ej: `/seccion3` en lugar de `/seccion3.html`)
 - El JavaScript detecta automáticamente el formato de URL para compatibilidad total
+- **Pages Functions** maneja las API requests con TypeScript
+- **D1 Database** proporciona persistencia de datos global sin configuración de servidor
 
 ## 📋 Descripción del Proyecto
 
