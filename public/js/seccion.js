@@ -13,7 +13,8 @@ function generateUUID() {
 function getCurrentSection() {
     const path = window.location.pathname;
     const href = window.location.href;
-    const match = path.match(/seccion(\d+)\.html/);
+    // Detectar con o sin .html (para Cloudflare Pages y servidor local)
+    const match = path.match(/seccion(\d+)(\.html)?/);
     const result = match ? parseInt(match[1]) : 1;
     
     // Solo log en debug mode (cuando no es la inicialización)
